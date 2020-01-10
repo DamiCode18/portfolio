@@ -1,0 +1,13 @@
+.home_pic {
+	background: #00b285;
+	/* height: 50vh; */
+	padding: 200px 0;
+	transform: skew(0deg, -5deg);
+	margin-top: -200px;
+	clip-path: inset(0px 0px 0px 0px);
+}
+.home_pic .content {
+	transform: skew(0deg, 5deg);
+	text-align: center;
+	/* clip-path: inset(10px 20px 30px 40px); */
+}
