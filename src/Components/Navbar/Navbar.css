@@ -1,8 +1,15 @@
 #toggle {
-    border: none;
-    outline: none;
+	border: none;
+	outline: none;
 }
-.navbar{
-    opacity: 0.8;
+.navbar {
+	opacity: 0.8;
 }
 
+.navbar-nav .nav-link {
+	color: #060829;
+}
+.logo {
+	height: 50px;
+	width: 150px;
+}

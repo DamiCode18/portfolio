@@ -1,12 +1,13 @@
 import React from 'react';
 import './Navbar.css';
+import logo from '../../Images/Screenshot from 2020-01-10 17-35-45.png';
 
 const Navbar = () => {
 	return (
 		<section className=''>
-			<nav className='navbar navbar-expand-md navbar-dark bg-dark'>
+			<nav className='navbar navbar-expand-md navbar-light bg-light fixed-top'>
 				<a className='navbar-brand' href='/'>
-					<img className='logo rounded-circle m-auto' alt='logo' />
+					<img className='logo m-auto' src={logo} alt='logo' />
 				</a>
 				<button className='navbar-toggler' id='toggle' data-toggle='collapse' data-target='.navbar-collapse'>
 					<span className='navbar-toggler-icon' id='icon' />
@@ -43,17 +44,17 @@ const Navbar = () => {
 							</div>
 						</li>
 						<li className='nav-item'>
-							<a className='' href='/'>
+							<a className='nav-link' href='/'>
 								<i className='fas fa-image mr-2' />Gallery
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='' href='/'>
+							<a className='nav-link' href='/'>
 								<i className='fas fa-question mr-2' />About
 							</a>
 						</li>
 						<li className='nav-item'>
-							<a className='' href='/'>
+							<a className='nav-link' href='/'>
 								<i className='fas fa-phone mr-2' />Contact
 							</a>
 						</li>

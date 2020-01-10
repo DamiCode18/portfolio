@@ -1,5 +1,6 @@
 .home_pic {
-	background: #00b285;
+	background: #060829;
+	color: #fff;
 	/* height: 50vh; */
 	padding: 200px 0;
 	transform: skew(0deg, -5deg);
@@ -10,4 +11,7 @@
 	transform: skew(0deg, 5deg);
 	text-align: center;
 	/* clip-path: inset(10px 20px 30px 40px); */
+}
+.content {
+	margin-top: 160px;
 }
