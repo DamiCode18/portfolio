@@ -15,22 +15,22 @@ const Navbar = () => {
 				</button>
 				<div className='navbar-collapse collapse'>
 					<ul className='navbar-nav ml-auto'>
-						<li className='nav-item active'>
+						<li className='nav-item m-auto active'>
 							<Link className='nav-link' to='/'>
 								<i className='fa fa-home mr-2' />Home<span className='sr-only' />
 							</Link>
 						</li>
-						<li className='nav-item'>
+						<li className='nav-item m-auto'>
 							<Link className='nav-link' to='/About'>
 								<i className='fas fa-image mr-2' />About
 							</Link>
 						</li>
-						<li className='nav-item'>
+						<li className='nav-item m-auto'>
 							<Link className='nav-link' to='/Project'>
 								<i className='fas fa-question mr-2' />Project
 							</Link>
 						</li>
-						<li className='nav-item'>
+						<li className='nav-item m-auto'>
 							<Link className='nav-link' to='/Contact'>
 								<i className='fas fa-phone mr-2' />Contact
 							</Link>
