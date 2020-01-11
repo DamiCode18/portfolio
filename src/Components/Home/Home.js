@@ -1,7 +1,7 @@
 import React from 'react';
 import './Home.css';
 import About from '../About/About';
-// import Project from '../Project/Project';
+import Project from '../Project/Project';
 const Home = () => {
 	return (
 		<div>
@@ -14,7 +14,7 @@ const Home = () => {
 				</div>
 			</section>
 			<About />
-			{/* <Project /> */}
+			<Project />
 		</div>
 	);
 };
