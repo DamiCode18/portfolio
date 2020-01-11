@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import './Navbar.css';
 import logo from '../../Images/logo.png';
 
@@ -15,48 +16,24 @@ const Navbar = () => {
 				<div className='navbar-collapse collapse'>
 					<ul className='navbar-nav ml-auto'>
 						<li className='nav-item active'>
-							<a className='nav-link' href='/'>
+							<Link className='nav-link' to='/'>
 								<i className='fa fa-home mr-2' />Home<span className='sr-only' />
-							</a>
-						</li>
-						<li className='nav-item dropdown'>
-							<a
-								className='nav-link dropdown-toggle'
-								href='/'
-								id='navbarDropdown'
-								role='button'
-								data-toggle='dropdown'
-								aria-haspopup='true'
-								aria-expanded='false'
-							>
-								<i className='fas fa-archive mr-2' />Our Courses
-							</a>
-							<div className='dropdown-menu' aria-labelledby='navbarDropdown'>
-								<a className='dropdown-item' href='/'>
-									Basic Program
-								</a>
-								<a className='dropdown-item' href='/'>
-									Intermediate Program
-								</a>
-								<a className='dropdown-item' href='/'>
-									Advance Program
-								</a>
-							</div>
+							</Link>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link' href='/'>
-								<i className='fas fa-image mr-2' />Gallery
-							</a>
+							<Link className='nav-link' to='/About'>
+								<i className='fas fa-image mr-2' />About
+							</Link>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link' href='/'>
-								<i className='fas fa-question mr-2' />About
-							</a>
+							<Link className='nav-link' to='/Project'>
+								<i className='fas fa-question mr-2' />Project
+							</Link>
 						</li>
 						<li className='nav-item'>
-							<a className='nav-link' href='/'>
+							<Link className='nav-link' to='/Contact'>
 								<i className='fas fa-phone mr-2' />Contact
-							</a>
+							</Link>
 						</li>
 					</ul>
 				</div>

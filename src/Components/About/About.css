@@ -1,0 +1,30 @@
+.about {
+	margin-top: -80px;
+	height: 100%;
+	width: 50vh;
+}
+
+@media only screen and (max-width: 768px) {
+	.about-card {
+		width: 250px;
+		height: 300px;
+	}
+}
+@media only screen and (min-width: 768px) {
+	.about-card {
+		width: 300px;
+		height: 300px;
+	}
+}
+@media only screen and (min-width: 992px) {
+	.about-card {
+		width: 350px;
+		height: 300px;
+	}
+}
+@media only screen and (min-width: 1200px) {
+	.about-card {
+		width: 450px;
+		height: 300px;
+	}
+}
