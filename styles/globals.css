@@ -1,8 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  background: #000000;
+  color: #ffffff;
+  font-family: -apple-system, 'League Spartan', BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -13,4 +19,20 @@ a {
 
 * {
   box-sizing: border-box;
+}
+h1 {
+  /* font-family: "Sofia Pro"; */
+  font-style: normal;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 48px;
+}
+.textBox {
+  text-shadow:
+     3px  3px 0 #342244,
+    -1px -1px 0 #342244,  
+     1px -1px 0 #342244,
+    -1px  1px 0 #342244,
+     1px  1px 0 #342244;
+     color: #fff;
 }
