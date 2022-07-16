@@ -8,8 +8,12 @@ body {
   margin: 0;
   background: #000000;
   color: #ffffff;
-  font-family: -apple-system, 'League Spartan', BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, "League Spartan", BlinkMacSystemFont, Segoe UI,
+    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
+    sans-serif;
+}
+.socials {
+  cursor: pointer;
 }
 
 a {
@@ -28,11 +32,7 @@ h1 {
   line-height: 48px;
 }
 .textBox {
-  text-shadow:
-     3px  3px 0 #342244,
-    -1px -1px 0 #342244,  
-     1px -1px 0 #342244,
-    -1px  1px 0 #342244,
-     1px  1px 0 #342244;
-     color: #fff;
+  text-shadow: 3px 3px 0 #342244, -1px -1px 0 #342244, 1px -1px 0 #342244,
+    -1px 1px 0 #342244, 1px 1px 0 #342244;
+  color: #fff;
 }

@@ -3,8 +3,8 @@ import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Navbar from './components/Navbar'
 import Homepage from './components/Homepage'
-import About from './components/About'
-import Projects from './components/Projects'
+// import About from './components/About'
+// import Projects from './components/Projects'
 
 const Home: NextPage = () => {
   return (
@@ -14,9 +14,9 @@ const Home: NextPage = () => {
         <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet" />
       </Head>
       <Navbar />
-        <Homepage />
-        <About />
-      <Projects />
+        <Homepage name={''} />
+        {/* <About />
+      <Projects /> */}
       <footer className={styles.footer}>
         <span className={styles.logo}>
           {/* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} /> */}

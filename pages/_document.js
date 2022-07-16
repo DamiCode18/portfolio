@@ -9,10 +9,10 @@ class MyDocument extends Document {
         <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin/>
-        <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100&display=swap" rel="stylesheet"/>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan&display=optional"/>
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
             rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Inter&display=optional"
           />
         </Head>
         <body>

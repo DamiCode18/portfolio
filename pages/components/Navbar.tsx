@@ -22,8 +22,11 @@ const Navbar = (props: Props) => {
       <a id="projects" href="#projects" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
         Projects
       </a>
-      <a id="about" href="#about" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white">
+      <a id="about" href="#about" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
         About Me
+      </a>
+      <a id="contact" href="#contact" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white">
+        Contact
       </a>
     </div>
   </div>
