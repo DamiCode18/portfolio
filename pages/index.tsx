@@ -2,7 +2,8 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 import Navbar from './components/Navbar'
-import Homepage from './components/Homepage'
+import Homepage from './Homepage'
+// import Contact from './contact'
 // import About from './components/About'
 // import Projects from './components/Projects'
 
@@ -17,11 +18,12 @@ const Home: NextPage = () => {
         <Homepage name={''} />
         {/* <About />
       <Projects /> */}
+      {/* <Contact name="contact" formData={[]} required /> */}
       <footer className={styles.footer}>
-        <span className={styles.logo}>
-          {/* <Image src="/vercel.svg" alt="Vercel Logo" width={72} height={16} /> */}
-          Damicode
-        </span>
+        <p>
+          Copyright {new Date().getFullYear()} &copy; Damicode
+        </p>
+       <p>Designed by Bolub</p>
       </footer>
     </div>
   )

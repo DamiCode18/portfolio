@@ -1,5 +1,5 @@
 import React from 'react'
-
+import Link from 'next/link'
 type Props = {}
 
 const Navbar = (props: Props) => {
@@ -16,18 +16,18 @@ const Navbar = (props: Props) => {
   </div>
   <div className="w-full block lg:flex lg:items-center lg:w-auto">
     <div className="text-sm lg:flex-grow">
-      <a id="home" href="#home" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
-        Home
-      </a>
-      <a id="projects" href="#projects" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
-        Projects
-      </a>
-      <a id="about" href="#about" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
-        About Me
-      </a>
-      <a id="contact" href="#contact" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white">
-        Contact
-      </a>
+      <Link href="/homepage" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
+        <a>Home</a>
+      </Link>
+      <Link href="/projects" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
+        <a>Projects</a>
+      </Link>
+      <Link href="/about" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
+        <a>About Me</a>
+      </Link>
+      <Link href="/contact" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white">
+        <a>Contact</a>
+      </Link>
     </div>
   </div>
 </nav>

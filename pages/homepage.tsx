@@ -1,7 +1,7 @@
 import React, { Fragment } from 'react'
 import Image from 'next/image'
-import avatar from '../assets/avatar.jpeg'
-import Button from './Button'
+import avatar from './assets/avatar.jpeg'
+import Button from './components/Button'
 type Props = {
   name: string,
 }
