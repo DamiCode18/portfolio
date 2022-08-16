@@ -36,3 +36,7 @@ h1 {
     -1px 1px 0 #342244, 1px 1px 0 #342244;
   color: #fff;
 }
+.txt-shadow {
+  color: #000;
+  text-shadow: 3px 3px 2px #ff7a00, 0 0 25px #ff7a00, 0 0 5px #ff7a00;
+}

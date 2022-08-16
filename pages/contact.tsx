@@ -1,12 +1,7 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useState } from 'react'
 import axios from 'axios';
-type Props = {
-    name: string,
-    formData: [],
-    required: boolean,
-}
 
-const Contact = (props: Props) => {
+const Contact = () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -39,7 +34,6 @@ const Contact = (props: Props) => {
 
     return (
         <Fragment>
-
             <form onSubmit={onSubmit} className="w-[30rem] mx-auto my-6 h-[400px]">
                 <div className="mb-6">
                     <input autoComplete="off" name="name" type="text" onChange={handleChange} value={formData.name} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter your name" required />

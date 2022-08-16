@@ -46,8 +46,8 @@ const Homepage = (props: Props) => {
             className="rounded-3xl"
             src={avatar}
             alt="Landscape picture"
-            width={436}
-            height={592}
+            width={336}
+            height={492}
           />
         </div>
       </div>
