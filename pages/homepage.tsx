@@ -10,10 +10,10 @@ type Props = {
 const Homepage = (props: Props) => {
   return (
     <Fragment>
-      <div className="home flex mx-[9%]">
+      <div className="home flex mx-[10%] justify-center mt-20">
         <div className="text-left my-auto max-w-[630px] mr-14">
           <h1 className="text-5xl">Hi, I’m Damilare</h1>
-          <p className="leading-loose text-lg font-bold my-10">I am a Software Engineer based in Lagos, Nigeria with 3 years of software development  experience.
+          <p className="leading-loose text-lg font-bold my-10">I am a Software Engineer based in Lagos, Nigeria with 4 years of software development  experience.
             am available for Remote or Full Time jobs.
           </p>
           <div className="mt-[4rem] mb-[2rem]">
