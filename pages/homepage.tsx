@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 import React, { Fragment } from 'react'
 import Image from 'next/image'
 import avatar from './assets/avatar.jpeg'
@@ -12,12 +13,12 @@ const Homepage = (props: Props) => {
     <Fragment>
       <div className="home flex mx-[10%] justify-center mt-5">
         <div className="text-left my-auto max-w-[630px] mr-14">
-          <h1 className="text-5xl bolder-text font-extrabold">Hi, I’m Damilare</h1>
+          <h1 className="text-5xl bolder-text font-extrabold">Hi, I'm Damilare</h1>
           <p className="leading-loose text-lg font-bold my-10">I am a Software Engineer based in Lagos, Nigeria with 4 years of software development  experience.
             I am available for Remote or Full Time jobs.
           </p>
           <div className="mt-[4rem] mb-[2rem]">
-            <Button name="My Projects" />
+            <Button name="RESUME" />
           </div>
           <div className="flex">
             <svg className="socials mr-4" width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
