@@ -8,7 +8,7 @@ const Navbar = (props: Props) => {
     <nav className="flex items-center justify-between p-6 mx-[10%]">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <a>
-          <span className="font-semibold text-xl tracking-tight textBox txt-shadow">DamiCode</span>
+          <span className="text-xl tracking-tight textBox txt-shadow font-extrabold">DamiCode</span>
         </a>
         <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
           <span className="sr-only">Open main menu</span>
