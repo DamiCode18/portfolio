@@ -13,8 +13,8 @@ const Homepage = (props: Props) => {
     <Fragment>
       <div className="home flex mx-[10%] justify-center mt-20">
         <div className="text-center md:text-left my-auto max-w-[630px] md:mr-14">
-          <h1 className="text-5xl bolder-text font-extrabold">Hi, I'm Damilare</h1>
-          <p className="text-justify leading-loose text-lg font-bold my-10">I am a Software Engineer based in Lagos, Nigeria with 4 years of software development  experience.
+          <h1 className="text-2xl md:text-5xl bolder-text font-extrabold">Hi, I'm Damilare</h1>
+          <p className="text-justify leading-loose text-sm md:text-lg font-bold my-10">I am a Software Engineer based in Lagos, Nigeria with 4 years of software development  experience.
             I am available for Remote or Full Time jobs.
           </p>
           <div className="mt-[4rem] mb-[2rem]">
