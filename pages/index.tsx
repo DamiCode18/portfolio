@@ -8,7 +8,7 @@ const Home: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>Damicode | Portfolio</title>
-        <link href="http://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet" />
+        <link href="https://fonts.cdnfonts.com/css/sofia-pro" rel="stylesheet" />
       </Head>
         <Homepage name={''} />
     </div>
