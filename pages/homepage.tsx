@@ -12,15 +12,15 @@ const Homepage = (props: Props) => {
   return (
     <Fragment>
       <div className="home flex mx-[10%] justify-center mt-5">
-        <div className="text-left my-auto max-w-[630px] mr-14">
+        <div className="text-center md:text-left my-auto max-w-[630px] md:mr-14">
           <h1 className="text-5xl bolder-text font-extrabold">Hi, I'm Damilare</h1>
-          <p className="leading-loose text-lg font-bold my-10">I am a Software Engineer based in Lagos, Nigeria with 4 years of software development  experience.
+          <p className="text-justify leading-loose text-lg font-bold my-10">I am a Software Engineer based in Lagos, Nigeria with 4 years of software development  experience.
             I am available for Remote or Full Time jobs.
           </p>
           <div className="mt-[4rem] mb-[2rem]">
             <Button name="RESUME" />
           </div>
-          <div className="flex">
+          <div className="flex justify-center md:justify-start">
             <svg className="socials mr-4" width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M16 0.75C7.16344 0.75 0 7.91344 0 16.75C0 25.5866 7.16344 32.75 16 32.75C24.8366 32.75 32 25.5866 32 16.75C32 7.91344 24.8366 0.75 16 0.75ZM17.6677 17.4528V26.1577H14.066V17.4531H12.2667V14.4534H14.066V12.6524C14.066 10.2052 15.0821 8.75 17.9688 8.75H20.372V11.7501H18.8698C17.7461 11.7501 17.6718 12.1693 17.6718 12.9517L17.6677 14.4531H20.3891L20.0706 17.4528H17.6677Z" fill="white" />
             </svg>
@@ -42,7 +42,7 @@ const Homepage = (props: Props) => {
 
           </div>
         </div>
-        <div className="rounded p-4">
+        <div className="rounded p-4 hidden md:block lg:block">
           <Image
             className="rounded-3xl"
             src={avatar}

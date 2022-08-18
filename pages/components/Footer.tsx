@@ -5,7 +5,7 @@ type Props = {}
 
 const Footer = (props: Props) => {
 return (
-  <footer className={styles.footer}>
+  <footer className='text-center py-[1rem] border-[#eaeaea] border-t-[1px] bottom-0 w-[100%] absolute mt-auto h-0'>
   <p>
     Copyright {new Date().getFullYear()} &copy; Damicode
   </p>
