@@ -20,7 +20,8 @@ class MyDocument extends Document {
         <body>
           <Main />
           <NextScript />
-          <Script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></Script>
+          <Script src="../path/to/flowbite/dist/flowbite.js"></Script>
+          {/* <Script src="https://unpkg.com/flowbite@1.5.2/dist/flowbite.js"></Script> */}
         </body>
       </Html>
     )

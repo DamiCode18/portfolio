@@ -2,6 +2,7 @@
 import React, { Fragment } from 'react'
 import Image from 'next/image'
 import avatar from './assets/avatar.jpeg'
+import Head from 'next/head'
 import Button from './components/Button'
 type Props = {
   name: string,
@@ -11,6 +12,9 @@ type Props = {
 const Homepage = (props: Props) => {
   return (
     <Fragment>
+      <Head>
+        <title>Damicode | Home</title>
+      </Head>
       <div className="home flex mx-[10%] justify-center mt-20">
         <div className="text-center md:text-left my-auto max-w-[630px] md:mr-14">
           <h1 className="text-2xl md:text-5xl bolder-text font-extrabold">Hi, I'm Damilare</h1>
