@@ -5,7 +5,7 @@ type Props = {}
 
 const Navbar = (props: Props) => {
   return (
-    <nav className="flex items-center justify-between p-6 mx-[10%]">
+    <nav className="flex items-center justify-between p-3 md:p-6 md:mx-[10%]">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
         <Link href="/"><a>
           <span className="text-xl tracking-tight textBox txt-shadow font-extrabold">DamiCode</span>
