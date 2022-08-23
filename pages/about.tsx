@@ -60,7 +60,7 @@ const About = (props: Props) => {
         </div>
         <div className="rounded p-4 hidden xl:block">
           <Image
-            className="rounded-3xl"
+            className="rounded-3xl object-cover"
             src={avatar}
             alt="Landscape picture"
             width={336}
