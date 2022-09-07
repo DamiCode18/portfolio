@@ -1,9 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 import Link from 'next/link'
+import { useRouter } from "next/router";
 type Props = {}
 
 const Navbar = (props: Props) => {
+  const router = useRouter();
   return (
     <nav className="flex items-center justify-between p-4 mx-[5%] md:p-6 md:mx-[10%]">
       <div className="container flex flex-wrap justify-between items-center mx-auto">
@@ -19,22 +21,24 @@ const Navbar = (props: Props) => {
           <ul className="flex flex-col p-4 mt-4 rounded-lg border md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0">
             <li>
               <Link href="/" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
-                <a className="text-base">Home</a>
+                <a className={`text-base ${router.route === '/' && "underline"}`}>Home</a>
               </Link>
             </li>
             <li>
               <Link href="/projects" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
-                <a className="text-base">Projects</a>
+                <a
+                  className={`text-base ${router.route === '/projects' && "underline"}`}
+                >Projects</a>
               </Link>
             </li>
             <li>
               <Link href="/about" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4">
-                <a className="text-base">About Me</a>
+                <a className={`text-base ${router.route === '/about' && "underline"}`}>About Me</a>
               </Link>
             </li>
             <li>
               <Link href="/contact" className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white">
-                <a className="text-base">Contact</a>
+                <a className={`text-base ${router.route === '/contact' && "underline"}`}>Contact</a>
               </Link>
             </li>
           </ul>

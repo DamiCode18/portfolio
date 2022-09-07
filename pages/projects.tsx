@@ -1,8 +1,16 @@
-import React,{ Fragment} from 'react'
+import React,{ Fragment, useEffect} from 'react'
 import Head from 'next/head'
+import axios from 'axios'
 type Props = {}
 
-const About = (props: Props) => {
+const Projects = (props: Props) => {
+  useEffect(() => {
+    axios.get(`${process.env.NEXT_PUBLIC_DATA_URL}`)
+    .then(response=>
+      console.log(response.data.data)
+    )
+    .catch(err=>console.log(err))
+  }, [])
   return (
     <Fragment>
     <Head>
@@ -15,4 +23,4 @@ const About = (props: Props) => {
   )
 }
 
-export default About;
+export default Projects;
