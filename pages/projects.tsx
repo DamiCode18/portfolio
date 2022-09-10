@@ -18,6 +18,7 @@ const Projects = (props: Props) => {
     </Head>
     <div className="projects mx-[10%] justify-center mt-5">
         <h1 className="head-shadow">My Projects</h1>
+        <p>test test</p>
     </div>
     </Fragment>
   )
