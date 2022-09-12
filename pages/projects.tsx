@@ -28,7 +28,7 @@ const Projects = (props: Props) => {
         <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4 text-center">
           {projects.map((project: any) => (
             <div key={project.id} className="max-w-sm rounded overflow-hidden shadow-lg">
-              <Image className="w-full" src={project.attributes.images.data.attributes.url} alt="Sunset in the mountains" width="300" height="200" />
+              <Image className="w-full" src='https://strapi-wkp6.onrender.com/uploads/Screenshot_2022_09_10_at_10_24_56_PM_5dea54545c.png' alt="Sunset in the mountains" width="300" height="200" />
               <div className="px-6 py-2">
                 <div className="font-bold text-xl mb-2">{project.attributes.title}</div>
                 <p className="text-gray-700 text-base">
