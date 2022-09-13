@@ -4,6 +4,7 @@ import Image from 'next/image'
 import avatar from './assets/avatar.jpeg'
 import Head from 'next/head'
 import Button from './components/Button'
+import { customLoader } from "../utils/strapiImageLoader";
 type Props = {
   name: string,
 }
@@ -59,6 +60,7 @@ const Homepage = (props: Props) => {
             alt="Landscape picture"
             width={336}
             height={492}
+            loader={customLoader}
           />
         </div>
       </div>
