@@ -6,7 +6,17 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      keyframes: {
+        giggle: {
+          '0%, 100%': {transform: 'rotate(-5deg)'},
+          '50%, 100%': {transform: 'rotate(5deg)'}
+        }
+      },
+      animation: {
+        giggle: 'giggle 3s ease-in-out infinite'
+      }
+    },
   },
   plugins: [
     require("flowbite/plugin")

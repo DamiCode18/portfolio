@@ -53,7 +53,7 @@ const Homepage = (props: Props) => {
 
           </div>
         </div>
-        <div className="rounded p-4 hidden md:block lg:block">
+        <div className="rounded p-4 hidden md:block lg:block animate-giggle">
           <Image
             className="rounded-3xl object-cover"
             src={avatar}

@@ -5,7 +5,6 @@ type IType = {
 };
 
 export const customLoader = ({ src, width, quality }: IType) => {
-    console.log(src);
   src = src.startsWith("/") ? src.replace("/", "") : src;
   return src.includes('static') ? src : `https://strapi-wkp6.onrender.com/${src}?w=${width}&q=${
     quality || 75

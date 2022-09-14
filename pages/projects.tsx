@@ -19,7 +19,7 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
   try {
     const data = await fetch(`${process.env.NEXT_PUBLIC_DATA_URL}`)
-      const projects = await data.json();
+    const projects = await data.json();
     return {
       props: { projects: projects.data }
     };
@@ -32,28 +32,31 @@ export const getServerSideProps: GetServerSideProps = async ({
 };
 
 const Projects = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
-  console.log(projects);
   return (
     <Fragment>
       <Head>
         <title>Damicode | Projects</title>
       </Head>
       <div className="projects mx-[10%] justify-center mt-5">
-        <h1 className="head-shadow">My Projects</h1>
-        <div className="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 xs:grid-cols-1 gap-4 text-center">
+        <h1 className="head-shadow mb-10">My Projects</h1>
+        <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-4 text-center">
           {projects.map((project: ProjectModel) => (
-            <div key={project.id} className="max-w-sm rounded overflow-hidden shadow-lg">
-              <Image 
-                className="w-full" 
-                src={project.attributes.images.data.attributes.url} 
-                alt="Sunset in the mountains" 
-                width="300" 
-                height="200"
-                loader={customLoader} 
-                />
+            <div key={project.id} className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-[#353131] py-2">
+              <Image
+                className="w-full"
+                src={project.attributes.images.data.attributes.url}
+                alt="Sunset in the mountains"
+                width="300"
+                height="150"
+                loader={customLoader}
+              />
               <div className="px-6 py-2">
-                <div className="font-bold text-xl mb-2">{project.attributes.title}</div>
-                <p className="text-gray-700 text-base">
+                <div className="font-bold text-xl mb-2">
+                  <a href={project.attributes.url} rel="noreferrer" target="_blank" className="underline">
+                    {project.attributes.title}
+                  </a>
+                </div>
+                <p className="text-sm text-white">
                   {project.attributes.description}
                 </p>
               </div>
@@ -66,7 +69,6 @@ const Projects = ({ projects }: InferGetServerSidePropsType<typeof getServerSide
             </div>
           ))
           }
-          {/* {projects} */}
         </div>
       </div>
     </Fragment>

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import avatar from './assets/avatar.jpeg'
 import Head from 'next/head';
 import Button from './components/Button'
+import { customLoader } from "../utils/strapiImageLoader"
 type Props = {}
 
 const About = (props: Props) => {
@@ -53,13 +54,14 @@ const About = (props: Props) => {
 
           </div>
         </div>
-        <div className="rounded p-4 hidden xl:block">
+        <div className="rounded p-4 hidden xl:block animate-giggle">
           <Image
             className="rounded-3xl object-cover"
             src={avatar}
             alt="Landscape picture"
             width={336}
             height={492}
+            loader={customLoader}
           />
         </div>
       </div>
