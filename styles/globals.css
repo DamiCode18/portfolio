@@ -85,3 +85,10 @@ h1 {
   color: #000000;
   text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;
 }
+.home, .about, .contact {
+  min-height: calc(100vh - 185px);
+}
+
+.contact { 
+  min-height: calc(100vh - 330px);
+} 

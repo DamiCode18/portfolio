@@ -34,9 +34,6 @@ const Contact = () => {
                 text: ''
             })
             setStatus(true);
-            setTimeout(() => {
-                setStatus(false);
-            }, 5000)
         })
             .catch((error) => error)
     };
@@ -46,9 +43,9 @@ const Contact = () => {
             <Head>
                 <title>Damicode | Contact </title>
             </Head>
-            {status && <div className="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 shadow-md px-4 py-3 rounded relative" role="alert">
-                <strong className="font-bold">Your message have been sent successfully!</strong>
-                <span className="block sm:inline">I'll definitely get back to you soon</span>
+            {status && <div className="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 shadow-md px-4 py-3 rounded relative max-w-[35rem] ml-auto" role="alert">
+                <strong className="font-bold">Your message have been sent successfully! </strong>
+                <span className="block sm:inline"> I'll definitely get back to you soon</span>
                 <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
                     <svg onClick={() => setStatus(false)} className="fill-current h-6 w-6 text-teal-500" role="button" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><title>Close</title><path d="M14.348 14.849a1.2 1.2 0 0 1-1.697 0L10 11.819l-2.651 3.029a1.2 1.2 0 1 1-1.697-1.697l2.758-3.15-2.759-3.152a1.2 1.2 0 1 1 1.697-1.697L10 8.183l2.651-3.031a1.2 1.2 0 1 1 1.697 1.697l-2.758 3.152 2.758 3.15a1.2 1.2 0 0 1 0 1.698z" /></svg>
                 </span>
@@ -63,7 +60,7 @@ const Contact = () => {
             </div>
             }
             <h1 className="head-shadow text-center my-[4rem] mx-[10%] justify-center mt-5">Contact</h1>
-            <form onSubmit={onSubmit} className="p-6 max-w-[30rem] mx-auto my-6 h-[400px]">
+            <form onSubmit={onSubmit} className="contact p-6 max-w-[30rem] mx-auto my-6 h-[400px]">
                 <div className="mb-6">
                     <input autoComplete="off" name="subject" type="text" onChange={handleChange} value={formData.subject} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ff7b00d8] focus:border-[#ff7b00d8] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#ff7b00d8] dark:focus:border-[#ff7b00d8" placeholder="Enter your name" required />
                 </div>
