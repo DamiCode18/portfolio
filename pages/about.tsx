@@ -29,7 +29,7 @@ const About = (props: Props) => {
               <Button name="RESUME" />
             </a>
           </div>
-       <Socials />
+          <div className="flex justify-center xl:justify-start"><Socials /></div>
         </div>
         <div className="rounded p-4 hidden xl:block animate-giggle">
           <Image
