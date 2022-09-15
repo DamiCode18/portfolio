@@ -10,7 +10,6 @@ class MyDocument extends Document {
         <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true"/>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=League+Spartan&display=optional"/>
         <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css" />
           <link
             rel="stylesheet"

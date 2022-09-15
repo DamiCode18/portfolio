@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@fontsource/league-spartan": "^4.5.11",
     "axios": "^0.27.2",
     "flowbite": "^1.5.2",
     "flowbite-react": "^0.1.8",
