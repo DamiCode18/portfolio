@@ -2,7 +2,6 @@ import React from "react";
 
 const Socials = () => {
   return (
-    <>
       <div className="flex justify-center md:justify-start">
         <a
           href="https://www.twitter.com/dami_code"
@@ -90,7 +89,6 @@ const Socials = () => {
           </svg>
         </a>
       </div>
-    </>
   );
 };
 
