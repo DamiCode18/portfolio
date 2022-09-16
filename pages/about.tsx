@@ -6,6 +6,7 @@ import Head from 'next/head';
 import Button from './components/Button'
 import { customLoader } from "../utils/strapiImageLoader"
 import Socials from '../utils/socials';
+import Skills from '../utils/skills';
 type Props = {}
 
 const About = (props: Props) => {
@@ -42,6 +43,7 @@ const About = (props: Props) => {
           />
         </div>
       </div>
+      <div className="flex justify-center m-auto mt-[-2rem] mb-[2rem] md:mt-[-10rem] md:mb-[10rem]"><Skills /></div>
     </Fragment>
   )
 }
