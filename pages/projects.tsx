@@ -40,7 +40,7 @@ const Projects = ({ projects }: InferGetServerSidePropsType<typeof getServerSide
       <div className="projects mx-[10%] justify-center mt-5">
         <h1 className="head-shadow mb-10">My Projects</h1>
         <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-4 text-center">
-          {projects.map((project: ProjectModel) => (
+          {projects && projects.map((project: ProjectModel) => (
             <div key={project.id} className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-[#353131] py-2">
               <Image
                 className="w-full"
@@ -69,6 +69,7 @@ const Projects = ({ projects }: InferGetServerSidePropsType<typeof getServerSide
             </div>
           ))
           }
+          {!projects && <p>No projects has been added yet</p>}
         </div>
       </div>
     </Fragment>
