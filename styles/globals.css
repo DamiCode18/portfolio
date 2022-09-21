@@ -94,3 +94,6 @@ h1 {
 .contact { 
   min-height: calc(100vh - 330px);
 } 
+.projects {
+  min-height: calc(100vh - 185px);
+}
