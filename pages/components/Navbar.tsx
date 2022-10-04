@@ -64,7 +64,7 @@ export default function Navbar() {
   const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <>
-      <nav className="relative flex flex-wrap items-center justify-between px-2 py-3 mb-3 bg-black">
+      <nav className="fixed w-full flex flex-wrap items-center justify-between px-2 py-3 mb-3 bg-black">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
           <div className="w-full relative flex justify-between md:w-auto lg:static lg:block lg:justify-start">
             <Link href="/">
@@ -85,7 +85,7 @@ export default function Navbar() {
           </div>
           <div
             className={
-              "md:flex flex-grow items-center" +
+              "md:flex flex-grow items-center justify-center" +
               (navbarOpen ? " flex" : " hidden")
             }
             id="example-navbar-danger"
