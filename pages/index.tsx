@@ -4,7 +4,7 @@ import Homepage from './homepage'
 const Home: NextPage = () => {
   return (
     <div className=''>
-        <Homepage name={''} />
+      <Homepage name={''} />
     </div>
   )
 }

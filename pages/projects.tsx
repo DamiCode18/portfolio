@@ -2,7 +2,6 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { Fragment, useEffect, useState } from 'react'
 import Head from 'next/head'
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Image from 'next/image'
 import { customLoader } from '../utils/strapiImageLoader';
 import { projectData } from '../utils/projects';
@@ -14,24 +13,7 @@ export interface ProjectModel {
   attributes: any,
 }
 
-export const getServerSideProps: GetServerSideProps = async ({
-  res
-}) => {
-  try {
-    const data = await fetch(`${process.env.NEXT_PUBLIC_DATA_URL}`)
-    const projects = await data.json();
-    return {
-      props: { projects: projects.data }
-    };
-  } catch {
-    res.statusCode = 404;
-    return {
-      props: {}
-    };
-  }
-};
-
-const Projects = ({ projects }: InferGetServerSidePropsType<typeof getServerSideProps>) => {
+const Projects = () => {
   return (
     <Fragment>
       <Head>
