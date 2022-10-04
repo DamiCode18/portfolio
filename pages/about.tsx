@@ -19,11 +19,12 @@ const About = (props: Props) => {
         <div className="text-center xl:text-left max-w-[630px] xl:mr-14">
           <h1 className="head-shadow">About Me</h1>
           <p className="text-justify leading-loose text-sm md:text-lg">
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            I am a frontend software engineer with about 4 years of professional experience, in the course of my professional career I have worked on great projects and that has made me extremely familiar with the tools and technologies involved in development.
 
-            It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            I have a good eye for design, am heavy on UX and performance, and am a fan of scalability.
 
-            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old.
+            I know about backend development as I've written NodeJs and python Django in the past, so I understand the full software development cycle. This experience has made me not just a front-end engineer who gets his job done but one who does the job in a good, standard, and future-proof way.
+
           </p>
           <div className="mt-[4rem] mb-[2rem]">
             <a href={process.env.NEXT_PUBLIC_CV} target="_blank" rel="noopener noreferrer">
