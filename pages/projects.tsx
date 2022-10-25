@@ -29,6 +29,8 @@ const Projects = () => {
                 src={project.imgUrl}
                 alt="Sunset in the mountains"
                 width="300"
+                objectFit='cover'
+                objectPosition='cover'
                 height="150"
                 loader={customLoader}
               />

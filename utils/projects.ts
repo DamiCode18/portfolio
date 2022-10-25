@@ -1,9 +1,25 @@
 export const projectData = [
   {
     id: 1,
+    url: "https://bodsquare.com",
+    title: "BodSquare",
+    imgUrl: "https://res.cloudinary.com/djz8perth/image/upload/v1656970129/Mockup_iPhone_13_bar5qk.png",
+    description: "This is the official Bodsquare website",
+    skills: ["CSS", "HTML", "Javascript", "React", "Nextjs", "ChakraUI"],
+  },
+  {
+    id: 1,
+    url: "https://dash.bodsquare.com",
+    title: "BodSquare WebApp",
+    imgUrl: "https://res.cloudinary.com/djz8perth/image/upload/v1656941591/content_znvmc4.png",
+    description: "Bodsquare allows for businesses to follow up with their customers from the moment they contact them until the end, regardless of the platform used.",
+    skills: ["CSS", "HTML", "Javascript", "TypeScript", "React", "ChakraUI", "Recoiljs"],
+  },
+  {
+    id: 1,
     url: "https://cybersocafrica.com",
     title: "CybersocAfrica",
-    imgUrl: "https://cybersocafrica.com/uploads/cybersoc-logo.svg",
+    imgUrl: "https://cybersocafrica.com/uploads/home-banner.jpg",
     description: "This is the official CybersocAfrica website",
     skills: ["CSS", "HTML", "Javascript", "GIT", "bootstrap"],
   },
