@@ -8,7 +8,7 @@ export const projectData = [
     skills: ["CSS", "HTML", "Javascript", "React", "Nextjs", "ChakraUI"],
   },
   {
-    id: 1,
+    id: 2,
     url: "https://dash.bodsquare.com",
     title: "BodSquare WebApp",
     imgUrl: "https://res.cloudinary.com/djz8perth/image/upload/v1656941591/content_znvmc4.png",
@@ -16,7 +16,7 @@ export const projectData = [
     skills: ["CSS", "HTML", "Javascript", "TypeScript", "React", "ChakraUI", "Recoiljs"],
   },
   {
-    id: 1,
+    id: 3,
     url: "https://cybersocafrica.com",
     title: "CybersocAfrica",
     imgUrl: "https://cybersocafrica.com/uploads/home-banner.jpg",
@@ -24,7 +24,7 @@ export const projectData = [
     skills: ["CSS", "HTML", "Javascript", "GIT", "bootstrap"],
   },
   {
-    id: 2,
+    id: 4,
     url: "https://cyberlab.com",
     title: "Cyberlab",
     imgUrl: "https://cyberlabafrica.com/uploads/platform-bg.jpg",
@@ -32,7 +32,7 @@ export const projectData = [
     skills: ["CSS", "HTML", "Javascript", "GIT", "bootstrap"],
   },
   {
-    id: 3,
+    id: 5,
     url: "https://donnette.staging-cpg.online/",
     title: "DONNETTE",
     imgUrl:
@@ -42,7 +42,7 @@ export const projectData = [
     skills: ["CSS", "HTML", "Javascript", "React", "GIT", "bootstrap"],
   },
   {
-    id: 4,
+    id: 6,
     url: "https://canary-bdc.surge.sh/",
     title: "SEBASTIAN",
     imgUrl: "https://canary-bdc.surge.sh/static/media/Group%2050.ede006d4.svg",
@@ -51,7 +51,7 @@ export const projectData = [
     skills: ["CSS", "HTML", "Javascript", "React", "GIT", "bootstrap"],
   },
   {
-    id: 5,
+    id: 7,
     url: "https://tunga.io",
     title: "TUNGA",
     imgUrl:
@@ -61,7 +61,7 @@ export const projectData = [
     skills: ["CSS", "HTML", "Javascript", "Web-components", "GIT"],
   },
   {
-    id: 6,
+    id: 8,
     url: "https://testing.tunga.io",
     title: "Tunga-Testing",
     imgUrl: "https://testing.tunga.io/static/media/Body.a185494f.png",
@@ -78,7 +78,7 @@ export const projectData = [
     ],
   },
   {
-    id: 7,
+    id: 9,
     url: "https://driveme.ng",
     title: "DrivemeNG",
     imgUrl: "https://driveme.ng/assets/img/car.png",
