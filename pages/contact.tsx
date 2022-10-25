@@ -59,7 +59,7 @@ const Contact = () => {
                 </span>
             </div>
             }
-            <h1 className="head-shadow text-center my-[4rem] mx-[10%] justify-center mt-5">Contact</h1>
+            <h1 className="head-shadow text-center my-[4rem] mx-[10%] justify-center mt-20">Contact</h1>
             <form onSubmit={onSubmit} className="contact p-6 max-w-[30rem] mx-auto my-6 h-[400px]">
                 <div className="mb-6">
                     <input autoComplete="off" name="subject" type="text" onChange={handleChange} value={formData.subject} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-[#ff7b00d8] focus:border-[#ff7b00d8] block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-[#ff7b00d8] dark:focus:border-[#ff7b00d8" placeholder="Enter your name" required />

@@ -15,7 +15,7 @@ const About = (props: Props) => {
       <Head>
         <title>Damicode | About </title>
       </Head>
-      <div className="about flex mx-[10%] justify-center mt-5 mb-[3rem] sm:mb-[0px]">
+      <div className="mt-20 flex mx-[10%] justify-center mb-[3rem] sm:mb-[0px]">
         <div className="text-center xl:text-left max-w-[630px] xl:mr-14">
           <h1 className="head-shadow">About Me</h1>
           <p className="text-justify leading-loose text-sm md:text-lg">

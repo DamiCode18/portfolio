@@ -4,6 +4,7 @@
 
 html,
 body {
+  min-height: 100%;
   padding: 0;
   margin: 0;
   background: #000000;
@@ -84,16 +85,4 @@ h1 {
 .head-shadow {
   color: #000000;
   text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;
-}
-.home, .contact {
-  min-height: calc(100vh - 185px);
-}
-.about {
-  min-height: calc(100vh - 267px)
-}
-.contact { 
-  min-height: calc(100vh - 330px);
-} 
-.projects {
-  min-height: calc(100vh - 185px);
 }

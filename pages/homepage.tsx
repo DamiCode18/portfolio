@@ -17,7 +17,7 @@ const Homepage = (props: Props) => {
       <Head>
         <title>Damicode | Home</title>
       </Head>
-      <div className="home flex mx-[10%] justify-center pt-20 min-h-[calc(100vh - 185px)]">
+      <div className="flex mx-[10%] justify-center pt-20 mt-10">
         <div className="text-center md:text-left my-20 max-w-[630px] md:mr-14">
           <h1 className="text-2xl md:text-5xl bolder-text font-extrabold">Hi, I'm Damilare</h1>
           <p className="text-justify leading-loose text-sm md:text-lg font-bold my-10">I am a Software Engineer based in Lagos, Nigeria with 4 years of software development  experience.
