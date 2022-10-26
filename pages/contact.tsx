@@ -43,7 +43,7 @@ const Contact = () => {
             <Head>
                 <title>Damicode | Contact </title>
             </Head>
-            {status && <div className="bg-teal-100 border-t-4 border-teal-500 rounded-b text-teal-900 shadow-md px-4 py-3 rounded relative max-w-[35rem] ml-auto" role="alert">
+            {status && <div className="bg-teal-100 border-t-4 z-50 border-teal-500 rounded-b text-teal-900 shadow-md px-4 py-3 mt-2 rounded relative max-w-[35rem] ml-auto" role="alert">
                 <strong className="font-bold">Your message have been sent successfully! </strong>
                 <span className="block sm:inline"> I'll definitely get back to you soon</span>
                 <span className="absolute top-0 bottom-0 right-0 px-4 py-3">
