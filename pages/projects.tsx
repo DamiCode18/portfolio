@@ -19,9 +19,9 @@ const Projects = () => {
       <Head>
         <title>Damicode | Projects</title>
       </Head>
-      <div className="projects mx-[10%] justify-center mt-20">
-        <h1 className="head-shadow mb-10">My Projects</h1>
-        <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-4 text-center">
+      <div className="projects mx-[10%] justify-center mt-20 text-center">
+        <h1 className="head-shadow mb-10 text-center">My Projects</h1>
+        <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-4 justify-items-center">
           {projectData && projectData.map((project: any) => (
             <div key={project.id} className="max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-[#353131] py-2">
               <Image
