@@ -26,6 +26,7 @@ const Homepage = (props: Props) => {
             software development experience. I am available for Remote or Full
             Time jobs.
           </p>
+          <div className="text-center xl:text-left">
           <div className="mt-[4rem] mb-[2rem]">
             <a
               href={process.env.NEXT_PUBLIC_CV}
@@ -35,11 +36,12 @@ const Homepage = (props: Props) => {
               <Button name="RESUME" />
             </a>
           </div>
-          <div className="flex justify-center md:justify-start">
+          <div className="flex justify-center xl:justify-start">
             <Socials />
           </div>
+          </div>
         </div>
-        <div className="rounded p-4 hidden md:block lg:block animate-giggle">
+        <div className="rounded p-4 hidden lg:block animate-giggle">
           <Image
             className="rounded-3xl object-cover"
             src={avatar}
