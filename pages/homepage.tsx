@@ -21,12 +21,12 @@ const Homepage = (props: Props) => {
           <h1 className="text-2xl md:text-5xl bolder-text font-extrabold">
             Hi, I'm Damilare
           </h1>
-          <p className="text-justify leading-loose text-sm md:text-lg font-bold my-10">
+          <p className="max-w-[450px] xl:max-w-[100%] text-justify leading-loose text-sm md:text-lg font-bold my-10">
             I am a Software Engineer based in Lagos, Nigeria with 4 years of
             software development experience. I am available for Remote or Full
             Time jobs.
           </p>
-          <div className="text-center xl:text-left">
+          <div className="text-center md:text-left">
           <div className="mt-[4rem] mb-[2rem]">
             <a
               href={process.env.NEXT_PUBLIC_CV}
@@ -36,7 +36,7 @@ const Homepage = (props: Props) => {
               <Button name="RESUME" />
             </a>
           </div>
-          <div className="flex justify-center xl:justify-start">
+          <div className="flex justify-center md:justify-start">
             <Socials />
           </div>
           </div>
