@@ -88,13 +88,4 @@ export const projectData = [
       "styled-components",
     ],
   },
-  {
-    id: 9,
-    url: "https://driveme.ng",
-    title: "DrivemeNG",
-    imgUrl: "https://driveme.ng/assets/img/car.png",
-    description:
-      "DriveMe.ng is a mobility technology company with a centralised platform aggregating product & service providers in the logistics and mobility space across Africa for ease of access to users.",
-    skills: ["CSS", "HTML", "Javascript", "React", "GIT", "bootstrap"],
-  },
 ];
