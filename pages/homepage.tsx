@@ -6,6 +6,7 @@ import Head from "next/head";
 import Button from "./components/Button";
 import { customLoader } from "../utils/imageLoader";
 import Socials from "../utils/socials";
+import Skills from "../utils/skills";
 
 type Props = {
   name: string;
@@ -18,7 +19,7 @@ const Homepage = (props: Props) => {
         <title>Damicode | Home</title>
       </Head>
       <div className="flex mx-[10%] justify-center pt-20 mt-10">
-        <div className="text-center md:text-left my-20 max-w-[630px] md:mr-14">
+        <div className="text-center lg:text-left my-20 max-w-[630px] md:mr-14">
           <h1 className="text-2xl md:text-5xl bolder-text font-extrabold">
             Hi, I'm Damilare
           </h1>
@@ -27,7 +28,7 @@ const Homepage = (props: Props) => {
             software development experience. I am available for Remote or Full
             Time jobs.
           </p>
-          <div className="text-center md:text-left">
+          <div className="text-center lg:text-left">
             <div className="mt-[4rem] mb-[2rem]">
               <a
                 href={process.env.NEXT_PUBLIC_CV}
@@ -37,7 +38,7 @@ const Homepage = (props: Props) => {
                 <Button name="RESUME" />
               </a>
             </div>
-            <div className="flex justify-center md:justify-start">
+            <div className="flex justify-center lg:justify-start">
               <Socials />
             </div>
           </div>
@@ -52,6 +53,9 @@ const Homepage = (props: Props) => {
             loader={customLoader}
           />
         </div>
+      </div>
+      <div className="flex justify-center text-center mx-auto mt-5 sm:mt-20">
+        <Skills />
       </div>
     </Fragment>
   );

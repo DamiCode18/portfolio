@@ -19,7 +19,7 @@ const Footer = (props: Props) => {
         <p className="text-xs ml-20">
           Designed by {" "}
           <a
-            href="https://www.twitter.com/bolub"
+            href="https://www.twitter.com/boluwatifeabio1"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:underline"

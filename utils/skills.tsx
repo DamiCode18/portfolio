@@ -2,7 +2,7 @@ import React from "react";
 
 const Skills = () => {
   return (
-    <div className="flex flex-row flex-wrap justify-center max-w-md">
+    <div className="flex flex-wrap md:gap-8 justify-center max-w-2xl">
       <svg
         width="108"
         height="54"
