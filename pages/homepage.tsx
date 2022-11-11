@@ -6,6 +6,7 @@ import Head from "next/head";
 import Button from "./components/Button";
 import { customLoader } from "../utils/strapiImageLoader";
 import Socials from "../utils/socials";
+
 type Props = {
   name: string;
 };
@@ -27,18 +28,18 @@ const Homepage = (props: Props) => {
             Time jobs.
           </p>
           <div className="text-center md:text-left">
-          <div className="mt-[4rem] mb-[2rem]">
-            <a
-              href={process.env.NEXT_PUBLIC_CV}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <Button name="RESUME" />
-            </a>
-          </div>
-          <div className="flex justify-center md:justify-start">
-            <Socials />
-          </div>
+            <div className="mt-[4rem] mb-[2rem]">
+              <a
+                href={process.env.NEXT_PUBLIC_CV}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button name="RESUME" />
+              </a>
+            </div>
+            <div className="flex justify-center md:justify-start">
+              <Socials />
+            </div>
           </div>
         </div>
         <div className="rounded p-4 hidden lg:block animate-giggle">
