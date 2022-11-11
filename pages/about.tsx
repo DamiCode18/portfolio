@@ -4,7 +4,7 @@ import Image from "next/image";
 import avatar from "./assets/avatar.jpeg";
 import Head from "next/head";
 import Button from "./components/Button";
-import { customLoader } from "../utils/strapiImageLoader";
+import { customLoader } from "../utils/imageLoader";
 import Socials from "../utils/socials";
 import Skills from "../utils/skills";
 type Props = {};
