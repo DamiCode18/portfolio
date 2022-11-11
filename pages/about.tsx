@@ -54,7 +54,7 @@ const About = (props: Props) => {
           />
         </div>
       </div>
-      <div className="flex justify-center m-auto">
+      <div className="flex justify-center text-center mx-auto mt-5 sm:mt-20">
         <Skills />
       </div>
     </Fragment>
