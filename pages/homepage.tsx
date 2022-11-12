@@ -21,7 +21,7 @@ const Homepage = (props: Props) => {
       <div className="flex mx-[10%] justify-center pt-20 mt-10">
         <div className="text-center lg:text-left my-20 max-w-[630px] md:mr-14">
           <h1 className="text-2xl md:text-5xl bolder-text font-extrabold">
-            Hi<span className="inline-block ml-1 animate-wave">👋</span>, I'm Damilare
+            Hi<span className="inline-block mx-1 animate-wave">👋</span>, <span className="ml-1">I'm Damilare</span>
           </h1>
           <p className="max-w-[450px] xl:max-w-[100%] text-justify leading-loose text-sm md:text-lg font-bold my-10">
             I am a Software Engineer based in Lagos, Nigeria with 4 years of
