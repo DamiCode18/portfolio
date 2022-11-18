@@ -30,7 +30,8 @@ export const projectData = [
     id: 3,
     url: "https://cybersocafrica.com",
     title: "CybersocAfrica",
-    imgUrl: "https://cybersocafrica.com/uploads/home-banner.jpg",
+    imgUrl:
+      "https://res.cloudinary.com/damicode/image/upload/v1668810549/Portfolio/Screenshot_2022-11-18_at_11.28.52_PM_djdjvo.png",
     description: "This is the official CybersocAfrica website",
     skills: ["CSS", "HTML", "Javascript", "GIT", "bootstrap"],
   },

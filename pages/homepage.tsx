@@ -7,6 +7,7 @@ import Button from "./components/Button";
 import { customLoader } from "../utils/imageLoader";
 import Socials from "../utils/socials";
 import Skills from "../utils/skills";
+import { shimmer, toBase64 } from "../utils/Shimer";
 
 type Props = {
   name: string;
@@ -49,6 +50,8 @@ const Homepage = (props: Props) => {
             src={avatar}
             alt="Landscape picture"
             width={336}
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
             height={492}
             loader={customLoader}
           />

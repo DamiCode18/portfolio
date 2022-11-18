@@ -3,7 +3,7 @@ import Head from "next/head";
 import Image from "next/image";
 import { customLoader } from "../utils/imageLoader";
 import { projectData } from "../utils/projects";
-
+import { shimmer, toBase64 } from "../utils/Shimer";
 
 const Projects = () => {
   return (
@@ -26,6 +26,8 @@ const Projects = () => {
                   src={project.imgUrl}
                   alt="Sunset in the mountains"
                   width={300}
+                  placeholder="blur"
+                  blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
                   quality={100}
                   objectFit="cover"
                   objectPosition="cover"
