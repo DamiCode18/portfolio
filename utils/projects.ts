@@ -1,19 +1,38 @@
+import { v4 as uuidv4 } from "uuid";
 export const projectData = [
   {
-    id: 1,
+    id: uuidv4(),
     url: "https://bodsquare.com",
     title: "BodSquare",
     imgUrl:
-      "https://res.cloudinary.com/djz8perth/image/upload/v1656970129/Mockup_iPhone_13_bar5qk.png",
+      "https://res.cloudinary.com/damicode/image/upload/v1668813282/Portfolio/Screenshot_2022-11-19_at_12.09.14_AM_k7ehfo.png",
     description: "This is the official Bodsquare website",
-    skills: ["CSS", "HTML", "Javascript", "React", "Nextjs", "ChakraUI"],
+    skills: [
+      "CSS",
+      "HTML",
+      "Javascript",
+      "React",
+      "Nextjs",
+      "ChakraUI",
+      "TypeScript",
+    ],
   },
   {
-    id: 2,
+    id: uuidv4(),
+    url: "https://damicode.netlify.app",
+    title: "Portfolio",
+    imgUrl:
+      "https://res.cloudinary.com/damicode/image/upload/v1668812884/Portfolio/Screenshot_2022-11-18_at_11.59.29_PM_ndnum9.png",
+    description:
+      "Just a portfolio app, that shows all my projects, I bet you're currently viewing it",
+    skills: ["CSS", "HTML", "Javascript", "Nextjs", "TypeScript"],
+  },
+  {
+    id: uuidv4(),
     url: "https://dash.bodsquare.com",
     title: "BodSquare WebApp",
     imgUrl:
-      "https://res.cloudinary.com/djz8perth/image/upload/v1656941591/content_znvmc4.png",
+      "https://res.cloudinary.com/damicode/image/upload/v1668813281/Portfolio/Screenshot_2022-11-19_at_12.10.17_AM_vypmpp.png",
     description:
       "Bodsquare allows for businesses to follow up with their customers from the moment they contact them until the end, regardless of the platform used.",
     skills: [
@@ -27,7 +46,7 @@ export const projectData = [
     ],
   },
   {
-    id: 3,
+    id: uuidv4(),
     url: "https://cybersocafrica.com",
     title: "CybersocAfrica",
     imgUrl:
@@ -36,47 +55,50 @@ export const projectData = [
     skills: ["CSS", "HTML", "Javascript", "GIT", "bootstrap"],
   },
   {
-    id: 4,
-    url: "https://cyberlab.com",
+    id: uuidv4(),
+    url: "https://cyberlabafrica.com",
     title: "Cyberlab",
-    imgUrl: "https://cyberlabafrica.com/uploads/platform-bg.jpg",
+    imgUrl:
+      "https://res.cloudinary.com/damicode/image/upload/v1668813281/Portfolio/Screenshot_2022-11-19_at_12.12.19_AM_bb2s0q.png",
     description: "This is the official Cyberslab website",
     skills: ["CSS", "HTML", "Javascript", "GIT", "bootstrap"],
   },
   {
-    id: 5,
+    id: uuidv4(),
     url: "https://donnette.staging-cpg.online/",
     title: "DONNETTE",
     imgUrl:
-      "https://donnette.staging-cpg.online/static/media/2918295.3bb6afe2.png",
+      "https://res.cloudinary.com/damicode/image/upload/v1668813580/Portfolio/Screenshot_2022-11-19_at_12.19.03_AM_v9omkd.png",
     description:
       "We bring you the convenience of making payments on your terms. Choose our credit card payment services, all designed to accommodate your hectic lifestyle",
     skills: ["CSS", "HTML", "Javascript", "React", "GIT", "bootstrap"],
   },
   {
-    id: 6,
+    id: uuidv4(),
     url: "https://canary-bdc.surge.sh/",
     title: "SEBASTIAN",
-    imgUrl: "https://canary-bdc.surge.sh/static/media/Group%2050.ede006d4.svg",
+    imgUrl:
+      "https://res.cloudinary.com/damicode/image/upload/v1668813282/Portfolio/Screenshot_2022-11-19_at_12.12.49_AM_yikkfm.png",
     description:
       "Sebastian, BDC helps you minimize the resources required to manage your international payments.",
     skills: ["CSS", "HTML", "Javascript", "React", "GIT", "bootstrap"],
   },
   {
-    id: 7,
+    id: uuidv4(),
     url: "https://tunga.io",
     title: "TUNGA",
     imgUrl:
-      "https://tunga.io/wp-content/uploads/2021/06/Tunga-office-working-1024x769.png",
+      "https://res.cloudinary.com/damicode/image/upload/v1668813282/Portfolio/Screenshot_2022-11-19_at_12.13.14_AM_wiu4jz.png",
     description:
       "Tunga is a staff augmentation firm that works with African software developers. We have helped 150+ companies worldwide with IT staffing and software outsourcing. Add experienced developers to your team within days!",
     skills: ["CSS", "HTML", "Javascript", "Web-components", "GIT"],
   },
   {
-    id: 8,
+    id: uuidv4(),
     url: "https://testing.tunga.io",
     title: "Tunga-Testing",
-    imgUrl: "https://testing.tunga.io/static/media/Body.a185494f.png",
+    imgUrl:
+      "https://res.cloudinary.com/damicode/image/upload/v1668813580/Portfolio/Screenshot_2022-11-19_at_12.19.20_AM_wftl62.png",
     description:
       "Tunga's testing platform, for vetting developers to be added to the tunga pool, contains various kinds of tests, ranging from multiple choice questions to code challenges and even personality tests.",
     skills: [
