@@ -43,7 +43,6 @@ const Contact = (props: Data) => {
         setLoading(false);
       })
       .catch((error) => {
-        console.log(error);
         setLoading(false);
       });
   };
