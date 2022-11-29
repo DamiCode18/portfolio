@@ -15,7 +15,7 @@ const About = (props: Props) => {
   return (
     <Fragment>
       <Head>
-        <title>Damicode | About </title>
+        <title>Damilare Adebayo | About </title>
       </Head>
       <div className="mt-20 flex mx-[10%] justify-center mb-[3rem] sm:mb-[0px]">
         <div className="text-center xl:text-left max-w-[630px] xl:mr-14">

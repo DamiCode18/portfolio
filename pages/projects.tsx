@@ -9,7 +9,7 @@ const Projects = () => {
   return (
     <Fragment>
       <Head>
-        <title>Damicode | Projects</title>
+        <title>Damilare Adebayo | Projects</title>
       </Head>
       <div className="projects mx-[10%] justify-center mt-20 text-center">
         <h1 className="head-shadow mb-10 text-center">My Projects</h1>

@@ -50,7 +50,7 @@ const Contact = (props: Data) => {
   return (
     <Fragment>
       <Head>
-        <title>Damicode | Contact </title>
+        <title>Damilare Adebayo | Contact </title>
       </Head>
       {status && (
         <div

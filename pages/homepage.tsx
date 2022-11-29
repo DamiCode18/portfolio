@@ -17,7 +17,7 @@ const Homepage = (props: Props) => {
   return (
     <Fragment>
       <Head>
-        <title>Damicode | Home</title>
+        <title>Damilare Adebayo | Home</title>
       </Head>
       <div className="flex mx-[10%] justify-center pt-20 mt-10">
         <div className="text-center lg:text-left my-20 max-w-[630px] md:mr-14">
