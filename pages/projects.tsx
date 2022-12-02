@@ -1,16 +1,17 @@
-import React, { Fragment, useEffect, useState } from "react";
-import Head from "next/head";
+import React, { Fragment } from "react";
 import Image from "next/image";
 import { customLoader } from "../utils/imageLoader";
 import { projectData } from "../utils/projects";
 import { shimmer, toBase64 } from "../utils/Shimer";
+import Seo from "../components/Seo";
 
 const Projects = () => {
   return (
     <Fragment>
-      <Head>
-        <title>Damilare Adebayo | Projects</title>
-      </Head>
+      <Seo
+        title="Projects"
+        description={`Some of my projects`}
+      />
       <div className="projects mx-[10%] justify-center mt-20 text-center">
         <h1 className="head-shadow mb-10 text-center">My Projects</h1>
         <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-4 justify-items-center">

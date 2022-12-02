@@ -2,12 +2,12 @@
 import React, { Fragment } from "react";
 import Image from "next/image";
 import avatar from "./assets/avatar.jpeg";
-import Head from "next/head";
-import Button from "./components/Button";
+import Button from "../components/Button";
 import { customLoader } from "../utils/imageLoader";
 import Socials from "../utils/socials";
 import Skills from "../utils/skills";
 import { shimmer, toBase64 } from "../utils/Shimer";
+import Seo from "../components/Seo";
 
 type Props = {
   name: string;
@@ -16,9 +16,7 @@ type Props = {
 const Homepage = (props: Props) => {
   return (
     <Fragment>
-      <Head>
-        <title>Damilare Adebayo | Home</title>
-      </Head>
+      <Seo />
       <div className="flex mx-[10%] justify-center pt-20 mt-10">
         <div className="text-center lg:text-left my-20 max-w-[630px] md:mr-14">
           <h1 className="text-2xl md:text-5xl bolder-text font-extrabold">

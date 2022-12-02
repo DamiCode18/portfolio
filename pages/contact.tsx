@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { Fragment, useState } from "react";
 import axios from "axios";
-import Head from "next/head";
+import Seo from "../components/Seo";
 
 type Data = {
   email: string;
@@ -49,9 +49,10 @@ const Contact = (props: Data) => {
 
   return (
     <Fragment>
-      <Head>
-        <title>Damilare Adebayo | Contact </title>
-      </Head>
+      <Seo
+        title="Contact Me"
+        description={`Shoot me a message, I'll get back to you`}
+      />
       {status && (
         <div
           className="bg-teal-100 border-t-4 z-50 border-teal-500 rounded-b text-teal-900 shadow-md px-4 py-3 mt-2 rounded relative max-w-[35rem] ml-auto"

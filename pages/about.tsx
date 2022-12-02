@@ -2,21 +2,22 @@
 import React, { Fragment } from "react";
 import Image from "next/image";
 import avatar from "./assets/avatar.jpeg";
-import Head from "next/head";
-import Button from "./components/Button";
+import Button from "../components/Button";
 import { customLoader } from "../utils/imageLoader";
 import Socials from "../utils/socials";
 import Skills from "../utils/skills";
 import { shimmer, toBase64 } from "../utils/Shimer";
+import Seo from "../components/Seo";
 
 type Props = {};
 
 const About = (props: Props) => {
   return (
     <Fragment>
-      <Head>
-        <title>Damilare Adebayo | About </title>
-      </Head>
+      <Seo
+        title="About"
+        description="About me page"
+      />
       <div className="mt-20 flex mx-[10%] justify-center mb-[3rem] sm:mb-[0px]">
         <div className="text-center xl:text-left max-w-[630px] xl:mr-14">
           <h1 className="head-shadow">About Me</h1>
