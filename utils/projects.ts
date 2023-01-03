@@ -19,6 +19,26 @@ export const projectData = [
   },
   {
     id: uuidv4(),
+    url: "https://kokua.wiki",
+    title: "Kokua - Free Resources",
+    imgUrl:
+      "https://res.cloudinary.com/damicode/image/upload/v1672748951/Portfolio/Screenshot_2023-01-03_at_1.28.50_PM_bethua.png",
+    description:
+      "A free resources application, very handy for all beginner and professioner developers",
+    skills: ["Chakra", "HTML", "Javascript", "Nextjs", "TypeScript", "Strapi"],
+  },
+  {
+    id: uuidv4(),
+    url: "https://anonn.xyz",
+    title: "Anonn - Anonymous Chat",
+    imgUrl:
+      "https://res.cloudinary.com/damicode/image/upload/v1672750374/Portfolio/Screenshot_2023-01-03_at_1.52.23_PM_lxtvb5.png",
+    description:
+      "Anonymously chat with people, they are free to say anything to you since you never get to know who you're chatting with except they tell you",
+    skills: ["Tailwindcss", "HTML", "Javascript", "Nextjs", "TypeScript"],
+  },
+  {
+    id: uuidv4(),
     url: "https://damicode.netlify.app",
     title: "Portfolio",
     imgUrl:
