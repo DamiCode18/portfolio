@@ -19,6 +19,16 @@ export const projectData = [
   },
   {
     id: uuidv4(),
+    url: "https://www.sendchamp.com/",
+    title: "Sendchamp",
+    imgUrl:
+      "https://res.cloudinary.com/damicode/image/upload/v1679333320/Portfolio/Screenshot_2023-03-20_at_6.28.23_PM_flrtaf.png",
+    description:
+      "Sendchamp is the most seamless messaging platform for growing businesses. Send messages to your customers across WhatsApp, SMS, email, and voice - all with zero coding skills to get started.",
+    skills: ["Chakra", "HTML", "Javascript", "React", "TypeScript", "Recoiljs"],
+  },
+  {
+    id: uuidv4(),
     url: "https://kokua.wiki",
     title: "Kokua - Free Resources",
     imgUrl:
