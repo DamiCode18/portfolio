@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 export default function Navbar() {
   const router = useRouter();
-  const [navbarOpen, setNavbarOpen] = React.useState(false);
+  const [navbarOpen, setNavbarOpen] = useState(false);
   return (
     <>
       <nav className="fixed w-full z-40 flex top-0 overflow-hidden flex-wrap items-center justify-between px-2 py-3 mb-10 bg-black">
