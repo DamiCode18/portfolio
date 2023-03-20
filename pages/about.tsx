@@ -22,7 +22,7 @@ const About = (props: Props) => {
         <div className="text-center xl:text-left max-w-[630px] xl:mr-14">
           <h1 className="head-shadow">About Me</h1>
           <p className="text-justify leading-loose text-sm md:text-lg">
-            I am a frontend software engineer with about 4 years of professional
+            I am a software engineer with 5 years of professional software development
             experience, in the course of my professional career I have worked on
             great projects and that has made me extremely familiar with the
             tools and technologies involved in development. I have a good eye

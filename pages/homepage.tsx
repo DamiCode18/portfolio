@@ -23,7 +23,7 @@ const Homepage = (props: Props) => {
             Hi<span className="inline-block mx-1 animate-wave">👋</span>, <span className="ml-1">I'm Damilare</span>
           </h1>
           <p className="max-w-[450px] xl:max-w-[100%] text-justify leading-loose text-sm md:text-lg font-bold my-10">
-            I am a Software Engineer based in Lagos, Nigeria with 4 years of
+            I am a software engineer with 5 years of
             software development experience. I am available for Remote or Full
             Time jobs.
           </p>

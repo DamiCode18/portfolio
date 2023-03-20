@@ -9,7 +9,13 @@ export default function Navbar() {
     <>
       <nav className="fixed w-full z-40 flex top-0 overflow-hidden flex-wrap items-center justify-between px-2 py-3 mb-10 bg-black">
         <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-          <div className="w-full relative flex justify-between md:w-auto lg:static lg:block lg:justify-start">
+          <div
+            className={
+              navbarOpen
+                ? "hidden"
+                : `w-full relative flex justify-between md:w-auto lg:static lg:block lg:justify-start`
+            }
+          >
             <Link href="/">
               <a className="text-xl txt-shadow font-extrabold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-white">
                 DamiCode
@@ -21,7 +27,7 @@ export default function Navbar() {
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
               <span className="sr-only">Main Menu</span>
-              {!navbarOpen ? (
+              {!navbarOpen && (
                 <svg
                   className="w-6 h-6"
                   aria-hidden="true"
@@ -35,31 +41,35 @@ export default function Navbar() {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-              ) : (
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth={2.2}
-                  stroke="currentColor"
-                  className="w-6 h-6 font-bold"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M6 18L18 6M6 6l12 12"
-                  />
-                </svg>
               )}
             </button>
           </div>
           <div
             className={
-              "md:flex flex-grow items-center justify-center" +
-              (navbarOpen ? " flex" : " hidden")
+              "transition duration-1000 ease-in md:flex flex-grow items-center justify-center relative" +
+              (navbarOpen
+                ? " bg-slate-800 opacity-80 h-[100vh] flex"
+                : " hidden")
             }
             id="example-navbar-danger"
           >
+            {navbarOpen && (
+              <svg
+                onClick={() => setNavbarOpen(!navbarOpen)}
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth={2.2}
+                stroke="currentColor"
+                className="w-6 h-6 font-bold absolute right-3 top-3"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            )}
             <ul className="flex flex-col md:flex-row list-none md:ml-auto">
               <li className="nav-item">
                 <Link
