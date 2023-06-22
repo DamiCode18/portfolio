@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { FcHome, FcAbout, FcContacts, FcBriefcase, FcStackOfPhotos } from 'react-icons/fc';
+
 
 export default function Navbar() {
   const router = useRouter();
@@ -78,10 +80,11 @@ export default function Navbar() {
                 >
                   <a
                     onClick={() => setNavbarOpen(false)}
-                    className={`text-base px-3 py-2 flex items-center hover:opacity-75 ${
+                    className={`text-[13px] px-3 py-2 flex items-center hover:opacity-75 ${
                       router.route === "/" && "underline"
                     }`}
                   >
+                    <span className="place-self-start text-[20px]"><FcHome /></span>
                     Home
                   </a>
                 </Link>
@@ -93,10 +96,11 @@ export default function Navbar() {
                 >
                   <a
                     onClick={() => setNavbarOpen(false)}
-                    className={`text-base px-3 py-2 flex items-center hover:opacity-75 ${
+                    className={`text-[13px] px-3 py-2 flex items-center hover:opacity-75 ${
                       router.route === "/projects" && "underline"
                     }`}
                   >
+                    <span className="place-self-start text-[20px]"><FcBriefcase /></span>
                     Projects
                   </a>
                 </Link>
@@ -108,11 +112,31 @@ export default function Navbar() {
                 >
                   <a
                     onClick={() => setNavbarOpen(false)}
-                    className={`text-base px-3 py-2 flex items-center hover:opacity-75 ${
+                    className={`text-[13px] px-3 py-2 flex items-center hover:opacity-75 ${
                       router.route === "/about" && "underline"
                     }`}
                   >
+                    
+                    <span className="place-self-start text-[20px]"><FcAbout /></span>
                     About Me
+                  </a>
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  href="https://kokua.wiki"
+                  passHref
+                  className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4"
+                >
+                  <a
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={
+                      "text-[13px] px-3 py-2 flex items-center hover:opacity-75"
+                    }
+                  >
+                    <span className="place-self-start text-[20px]"><FcStackOfPhotos /></span>
+                    Resources
                   </a>
                 </Link>
               </li>
@@ -123,10 +147,11 @@ export default function Navbar() {
                 >
                   <a
                     onClick={() => setNavbarOpen(false)}
-                    className={`text-base px-3 py-2 flex items-center hover:opacity-75 ${
+                    className={`text-[13px] px-3 py-2 flex items-center hover:opacity-75 ${
                       router.route === "/contact" && "underline"
                     }`}
                   >
+                    <span className="place-self-start text-[20px]"><FcContacts /></span>
                     Contact
                   </a>
                 </Link>
