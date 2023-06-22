@@ -95,16 +95,6 @@ export const projectData = [
   },
   {
     id: uuidv4(),
-    url: "https://donnette.staging-cpg.online/",
-    title: "DONNETTE",
-    imgUrl:
-      "https://res.cloudinary.com/damicode/image/upload/v1668813580/Portfolio/Screenshot_2022-11-19_at_12.19.03_AM_v9omkd.png",
-    description:
-      "We bring you the convenience of making payments on your terms. Choose our credit card payment services, all designed to accommodate your hectic lifestyle",
-    skills: ["CSS", "HTML", "Javascript", "React", "GIT", "bootstrap"],
-  },
-  {
-    id: uuidv4(),
     url: "https://canary-bdc.surge.sh/",
     title: "SEBASTIAN",
     imgUrl:
