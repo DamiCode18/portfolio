@@ -14,24 +14,33 @@ type Props = {};
 const About = (props: Props) => {
   return (
     <Fragment>
-      <Seo
-        title="About"
-        description="About me page"
-      />
+      <Seo title="About" description="About me page" />
       <div className="mt-20 flex mx-[10%] justify-center mb-[3rem] sm:mb-[0px]">
         <div className="text-center xl:text-left max-w-[630px] xl:mr-14">
           <h1 className="head-shadow">About Me</h1>
           <p className="text-justify leading-loose text-sm md:text-lg">
-            I am a software engineer with 5 years of professional software development
-            experience, in the course of my professional career I have worked on
-            great projects and that has made me extremely familiar with the
-            tools and technologies involved in development. I have a good eye
-            for design, am heavy on UX and performance, and am a fan of
-            scalability. I know about backend development as I've written NodeJs
-            and python Django in the past, so I understand the full software
-            development cycle. This experience has made me not just a front-end
-            engineer who gets his job done but one who does the job in a good,
-            standard, and future-proof way.
+            I'm a software engineer with 5 years of experience, I am a skilled
+            and innovative professional dedicated to creating exceptional user
+            experiences. Passionate about blending creativity with technical
+            expertise, I have a deep understanding of frontend technologies and
+            a proven track record of delivering visually stunning and highly
+            functional web applications.
+            <br />
+            My expertise lies in HTML, CSS, and JavaScript, and I am well-versed
+            in modern frameworks such as React and Vue.js. Leveraging my
+            proficiency in responsive design principles, I have developed
+            cross-platform applications that seamlessly adapt to various screen
+            sizes and devices. I have a keen eye for detail and a commitment to
+            crafting pixel-perfect designs that not only meet client
+            requirements but also exceed user expectations.
+            <br />
+            Beyond technical skills, I am a proactive communicator and
+            collaborative team player. I thrive in an agile environment where
+            ideas are shared openly, and I actively contribute to code reviews
+            and provide constructive feedback to fellow developers. My strong
+            problem-solving abilities enable me to tackle complex challenges and
+            find innovative solutions, while my attention to detail and ability
+            to meet deadlines ensure the timely delivery of high-quality work.
           </p>
           <div className="mt-[4rem] mb-[2rem]">
             <a
@@ -53,7 +62,9 @@ const About = (props: Props) => {
             alt="Landscape picture"
             width={336}
             placeholder="blur"
-            blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(
+              shimmer(700, 475)
+            )}`}
             height={492}
             loader={customLoader}
           />
