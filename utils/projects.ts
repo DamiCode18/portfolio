@@ -119,15 +119,6 @@ export const projectData = [
   },
   {
     id: uuidv4(),
-    url: "https://canary-bdc.surge.sh/",
-    title: "SEBASTIAN",
-    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813282/Portfolio/Screenshot_2022-11-19_at_12.12.49_AM_yikkfm.png`,
-    description:
-      "Sebastian, BDC helps you minimize the resources required to manage your international payments.",
-    skills: ["CSS", "HTML", "Javascript", "React", "GIT", "bootstrap"],
-  },
-  {
-    id: uuidv4(),
     url: "https://tunga.io",
     title: "TUNGA",
     imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813282/Portfolio/Screenshot_2022-11-19_at_12.13.14_AM_wiu4jz.png`,
