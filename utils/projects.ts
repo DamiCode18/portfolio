@@ -2,6 +2,15 @@ import { v4 as uuidv4 } from "uuid";
 export const projectData = [
   {
     id: uuidv4(),
+    url: "https://kyshi.co",
+    title: "Kyshi",
+    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1708964770/Portfolio/Kyshi_d76iqf.png`,
+    description:
+      "Unlocking Boundless Possibilities in Payments and Revenue in Africa",
+    skills: ["CSS", "HTML", "Vue", "Nuxt", "Tailwindcss"],
+  },
+  {
+    id: uuidv4(),
     url: "https://bodsquare.com",
     title: "BodSquare",
     imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813282/Portfolio/Screenshot_2022-11-19_at_12.09.14_AM_k7ehfo.png`,
