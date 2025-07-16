@@ -19,7 +19,7 @@ const About = (props: Props) => {
         <div className="text-center xl:text-left max-w-[630px] xl:mr-14">
           <h1 className="head-shadow">About Me</h1>
           <p className="text-justify leading-loose text-sm md:text-lg">
-            I'm a software engineer with 5 years of experience, I am a skilled
+            I'm a software engineer with 7+ years of experience, I am a skilled
             and innovative professional dedicated to creating exceptional user
             experiences. Passionate about blending creativity with technical
             expertise, I have a deep understanding of frontend technologies and
