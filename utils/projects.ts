@@ -7,7 +7,7 @@ export const projectData = [
     imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1768219584/Screenshot_2026-01-12_at_1.06.00_PM_xzajk4.png`,
     description:
       "Create, share, and track your links with ease. Build your brand with every click using our professional, lightning-fast URL shortening service.",
-    skills: ["Tailwindcss", "Javascript", "Nextjs", "TypeScript", "React-query"],
+    skills: ["Tailwindcss", "Javascript", "Nextjs", "TypeScript", "React-query", "Nestjs", "Prisma", "Postgres"],
   },
   {
     id: uuidv4(),
