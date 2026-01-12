@@ -2,6 +2,15 @@ import { v4 as uuidv4 } from "uuid";
 export const projectData = [
   {
     id: uuidv4(),
+    url: "https://urltrim.xyz",
+    title: "Urltrim",
+    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1768219584/Screenshot_2026-01-12_at_1.06.00_PM_xzajk4.png`,
+    description:
+      "Create, share, and track your links with ease. Build your brand with every click using our professional, lightning-fast URL shortening service.",
+    skills: ["Tailwindcss", "Javascript", "Nextjs", "TypeScript", "React-query"],
+  },
+  {
+    id: uuidv4(),
     url: "https://kyshi.co",
     title: "Kyshi",
     imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1708964770/Portfolio/Kyshi_d76iqf.png`,
@@ -11,27 +20,37 @@ export const projectData = [
   },
   {
     id: uuidv4(),
-    url: "https://bodsquare.com",
-    title: "BodSquare",
-    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813282/Portfolio/Screenshot_2022-11-19_at_12.09.14_AM_k7ehfo.png`,
-    description: "This is the official Bodsquare website",
-    skills: ["CSS", "HTML", "Javascript", "React", "ChakraUI", "TypeScript"],
+    url: "https://cybersocafrica.com",
+    title: "CybersocAfrica",
+    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668810549/Portfolio/Screenshot_2022-11-18_at_11.28.52_PM_djdjvo.png`,
+    description: "This is the official CybersocAfrica website",
+    skills: ["CSS", "HTML", "Javascript", "GIT", "bootstrap"],
   },
   {
     id: uuidv4(),
-    url: "https://pdfly.io",
-    title: "Pdfly",
-    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1704220650/Portfolio/Screenshot_2024-01-02_at_10.10.54_AM_y1ay98.png`,
+    url: "https://kokua.wiki",
+    title: "Kokua - Free Resources",
+    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1672748951/Portfolio/Screenshot_2023-01-03_at_1.28.50_PM_bethua.png`,
     description:
-      "Most PDF generators are either robust or easy-to-use. Ours is both. Good luck finding a reason not to switch.",
-    skills: [
-      "CSS",
-      "HTML",
-      "Javascript",
-      "Nextjs",
-      "Tailwindcss",
-      "TypeScript",
-    ],
+      "A free resources application, very handy for all beginner and professioner developers",
+    skills: ["Chakra", "HTML", "Javascript", "Nextjs", "TypeScript", "Strapi"],
+  },
+  {
+    id: uuidv4(),
+    url: "https://cyberlabafrica.com",
+    title: "Cyberlab",
+    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813281/Portfolio/Screenshot_2022-11-19_at_12.12.19_AM_bb2s0q.png`,
+    description: "This is the official Cyberslab website",
+    skills: ["CSS", "HTML", "Javascript", "GIT", "bootstrap"],
+  },
+  {
+    id: uuidv4(),
+    url: "https://tunga.io",
+    title: "TUNGA",
+    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813282/Portfolio/Screenshot_2022-11-19_at_12.13.14_AM_wiu4jz.png`,
+    description:
+      "Tunga is a staff augmentation firm that works with African software developers. We have helped 150+ companies worldwide with IT staffing and software outsourcing. Add experienced developers to your team within days!",
+    skills: ["CSS", "HTML", "Javascript", "Web-components", "GIT"],
   },
   {
     id: uuidv4(),
@@ -50,21 +69,37 @@ export const projectData = [
   },
   {
     id: uuidv4(),
+    url: "https://testing.tunga.io",
+    title: "Tunga-Testing",
+    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813580/Portfolio/Screenshot_2022-11-19_at_12.19.20_AM_wftl62.png`,
+    description:
+      "Tunga's testing platform, for vetting developers to be added to the tunga pool, contains various kinds of tests, ranging from multiple choice questions to code challenges and even personality tests.",
+    skills: [
+      "CSS",
+      "HTML",
+      "Javascript",
+      "React",
+      "GIT",
+      "bootstrap",
+      "styled-components",
+    ],
+  },
+  {
+    id: uuidv4(),
+    url: "https://bodsquare.com",
+    title: "BodSquare",
+    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813282/Portfolio/Screenshot_2022-11-19_at_12.09.14_AM_k7ehfo.png`,
+    description: "This is the official Bodsquare website",
+    skills: ["CSS", "HTML", "Javascript", "React", "ChakraUI", "TypeScript"],
+  },
+  {
+    id: uuidv4(),
     url: "https://www.sendchamp.com/",
     title: "Sendchamp",
     imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1679333320/Portfolio/Screenshot_2023-03-20_at_6.28.23_PM_flrtaf.png`,
     description:
       "Sendchamp is the most seamless messaging platform for growing businesses. Send messages to your customers across WhatsApp, SMS, email, and voice - all with zero coding skills to get started.",
     skills: ["Chakra", "HTML", "Javascript", "React", "TypeScript", "Recoiljs"],
-  },
-  {
-    id: uuidv4(),
-    url: "https://kokua.wiki",
-    title: "Kokua - Free Resources",
-    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1672748951/Portfolio/Screenshot_2023-01-03_at_1.28.50_PM_bethua.png`,
-    description:
-      "A free resources application, very handy for all beginner and professioner developers",
-    skills: ["Chakra", "HTML", "Javascript", "Nextjs", "TypeScript", "Strapi"],
   },
   {
     id: uuidv4(),
@@ -100,47 +135,5 @@ export const projectData = [
       "ChakraUI",
       "Recoiljs",
     ],
-  },
-  {
-    id: uuidv4(),
-    url: "https://cybersocafrica.com",
-    title: "CybersocAfrica",
-    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668810549/Portfolio/Screenshot_2022-11-18_at_11.28.52_PM_djdjvo.png`,
-    description: "This is the official CybersocAfrica website",
-    skills: ["CSS", "HTML", "Javascript", "GIT", "bootstrap"],
-  },
-  {
-    id: uuidv4(),
-    url: "https://cyberlabafrica.com",
-    title: "Cyberlab",
-    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813281/Portfolio/Screenshot_2022-11-19_at_12.12.19_AM_bb2s0q.png`,
-    description: "This is the official Cyberslab website",
-    skills: ["CSS", "HTML", "Javascript", "GIT", "bootstrap"],
-  },
-  {
-    id: uuidv4(),
-    url: "https://tunga.io",
-    title: "TUNGA",
-    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813282/Portfolio/Screenshot_2022-11-19_at_12.13.14_AM_wiu4jz.png`,
-    description:
-      "Tunga is a staff augmentation firm that works with African software developers. We have helped 150+ companies worldwide with IT staffing and software outsourcing. Add experienced developers to your team within days!",
-    skills: ["CSS", "HTML", "Javascript", "Web-components", "GIT"],
-  },
-  {
-    id: uuidv4(),
-    url: "https://testing.tunga.io",
-    title: "Tunga-Testing",
-    imgUrl: `${process.env.NEXT_PUBLIC_ASSETS}/v1668813580/Portfolio/Screenshot_2022-11-19_at_12.19.20_AM_wftl62.png`,
-    description:
-      "Tunga's testing platform, for vetting developers to be added to the tunga pool, contains various kinds of tests, ranging from multiple choice questions to code challenges and even personality tests.",
-    skills: [
-      "CSS",
-      "HTML",
-      "Javascript",
-      "React",
-      "GIT",
-      "bootstrap",
-      "styled-components",
-    ],
-  },
+  }
 ];
