@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { Fragment } from "react";
-import Image from "next/image";
 import { projectData } from "../utils/projects";
 import Seo from "../components/Seo";
 
@@ -19,14 +19,12 @@ const Projects = () => {
                 key={project.id}
                 className="transition ease-in-out duration-300 hover:scale-80 hover:-translate-y-1 delay-150 max-w-sm rounded overflow-hidden shadow-lg border-solid border-2 border-[#353131]"
               >
-                <div className="relative w-full h-48">
-                  <Image
-                    src={project.imgUrl}
-                    alt={project.title}
-                    layout="fill"
-                    objectFit="cover"
-                  />
-                </div>
+                <img
+                  className="w-full h-48 object-cover block"
+                  src={project.imgUrl}
+                  alt={project.title}
+                  loading="lazy"
+                />
                 <div className="px-6 py-2 pt-4">
                   <div className="font-bold text-xl mb-2">
                     <a
