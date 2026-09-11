@@ -4,6 +4,8 @@ import Image from "next/image";
 import avatar from "../../pages/assets/avatar.jpeg";
 import TagPill from "../TagPill";
 import Reveal from "../Reveal";
+import SectionHeading from "../SectionHeading";
+import Scramble from "../motion/Scramble";
 import { customLoader } from "../../utils/imageLoader";
 import Skills from "../../utils/skills";
 import { shimmer, toBase64 } from "../../utils/Shimer";
@@ -28,14 +30,7 @@ const facts = [
 const About = () => {
   return (
     <section id="about" className="mx-[6%] py-32">
-      <Reveal className="mx-auto max-w-3xl text-center">
-        <p className="text-xs font-bold uppercase tracking-[0.3em] text-subtle">
-          Who I Am
-        </p>
-        <h2 className="font-display bolder-text mt-4 uppercase font-extrabold leading-[0.95] tracking-tight text-[clamp(3rem,11vw,6rem)]">
-          About Me
-        </h2>
-      </Reveal>
+      <SectionHeading eyebrow="Who I Am" title="About Me" />
 
       <div className="mx-auto mt-20 grid max-w-6xl grid-cols-1 items-start gap-16 lg:grid-cols-[minmax(0,320px)_1fr]">
         {/* stays a direct grid child so `sticky` has the full column to work with */}
@@ -114,9 +109,10 @@ const About = () => {
 
           <Reveal className="mt-14">
             <div className="rounded-3xl border border-line bg-surface p-8">
-              <p className="text-xs font-bold uppercase tracking-[0.3em] text-subtle">
-                Tools I Use
-              </p>
+              <Scramble
+                text="Tools I Use"
+                className="text-xs font-bold uppercase tracking-[0.3em] text-subtle"
+              />
               <div className="mt-6 flex justify-center">
                 <Skills />
               </div>

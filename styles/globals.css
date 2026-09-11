@@ -103,6 +103,73 @@ body {
 .js .hero-anim {
   opacity: 0;
 }
+/* Section headings are split into characters by GSAP before animating in. */
+.js .split-heading {
+  opacity: 0;
+}
+.hero-word,
+.hero-char,
+.split-char {
+  display: inline-block;
+}
+
+/* ScrollSmoother handles anchor scrolling itself; native smooth scroll
+   would fight it. */
+.smooth {
+  scroll-behavior: auto;
+}
+
+/* Custom cursor (components/motion/Cursor.tsx) */
+.custom-cursor,
+.custom-cursor * {
+  cursor: none !important;
+}
+.cursor-dot,
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  border-radius: 9999px;
+  pointer-events: none;
+  opacity: 0;
+}
+.cursor-dot {
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  background: #ff7a00;
+}
+.cursor-ring {
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border: 1.5px solid var(--fg);
+  opacity: 0;
+}
+
+/* Theme switch: the new theme sweeps out from the toggle in a circle
+   (View Transitions API; the crossfade below is the fallback). */
+.theme-wipe::view-transition-old(root),
+.theme-wipe::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+.theme-wipe::view-transition-old(root) {
+  z-index: 1;
+}
+.theme-wipe::view-transition-new(root) {
+  z-index: 2;
+  animation: theme-wipe 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@keyframes theme-wipe {
+  from {
+    clip-path: circle(0 at var(--wipe-x, 50%) var(--wipe-y, 50%));
+  }
+  to {
+    clip-path: circle(150vmax at var(--wipe-x, 50%) var(--wipe-y, 50%));
+  }
+}
 
 /* Crossfade surfaces while the theme toggles (class added by useTheme). */
 html.theme-switching,
@@ -115,7 +182,8 @@ html.theme-switching *::after {
 
 @media (prefers-reduced-motion: reduce) {
   .js .reveal,
-  .js .hero-anim {
+  .js .hero-anim,
+  .js .split-heading {
     opacity: 1;
     transform: none;
     transition: none;

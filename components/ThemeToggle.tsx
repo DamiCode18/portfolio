@@ -1,5 +1,5 @@
 import React from "react";
-import { useTheme } from "../utils/useTheme";
+import { originOf, useTheme } from "../utils/useTheme";
 
 /**
  * The dark/light switch that doubles as the "O" in the hero headline.
@@ -12,7 +12,7 @@ const ThemeToggle = () => {
   return (
     <button
       type="button"
-      onClick={toggle}
+      onClick={(event) => toggle(originOf(event.currentTarget))}
       aria-label={`Switch to ${isDark ? "light" : "dark"} mode`}
       aria-pressed={isDark}
       title={`Switch to ${isDark ? "light" : "dark"} mode`}

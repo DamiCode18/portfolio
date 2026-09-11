@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import Marquee from "./Marquee";
 import Reveal from "./Reveal";
+import Magnetic from "./motion/Magnetic";
+import Scramble from "./motion/Scramble";
 
 const navigate = [
   { label: "Home", href: "/#hero" },
@@ -21,6 +23,8 @@ const elsewhere = [
 const linkClass =
   "inline-flex items-center gap-1 text-sm text-muted transition duration-300 hover:text-accent hover:translate-x-0.5";
 
+const eyebrowClass = "text-xs font-bold uppercase tracking-[0.3em] text-subtle";
+
 const Footer = () => {
   return (
     <footer className="mt-24">
@@ -36,17 +40,19 @@ const Footer = () => {
               Software engineer building fast, accessible products end to end
               — from the interface to the API.
             </p>
-            <Link href="/#contact">
-              <a className="mt-6 inline-block rounded-full bg-fg px-5 py-3 text-sm font-bold text-bg transition duration-300 hover:-translate-y-0.5 hover:opacity-85">
-                Start a project
-              </a>
-            </Link>
+            <div className="mt-6">
+              <Magnetic strength={0.3}>
+                <Link href="/#contact">
+                  <a className="block rounded-full bg-fg px-5 py-3 text-sm font-bold text-bg transition duration-300 hover:opacity-85">
+                    Start a project
+                  </a>
+                </Link>
+              </Magnetic>
+            </div>
           </div>
 
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-subtle">
-              Navigate
-            </p>
+            <Scramble text="Navigate" className={eyebrowClass} />
             <ul className="mt-5 space-y-3">
               {navigate.map((link) => (
                 <li key={link.href}>
@@ -59,9 +65,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <p className="text-xs font-bold uppercase tracking-[0.3em] text-subtle">
-              Elsewhere
-            </p>
+            <Scramble text="Elsewhere" className={eyebrowClass} />
             <ul className="mt-5 space-y-3">
               {elsewhere.map((link) => (
                 <li key={link.href}>

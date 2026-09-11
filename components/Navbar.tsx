@@ -1,9 +1,22 @@
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import Socials from "../utils/socials";
-import { useTheme } from "../utils/useTheme";
+import { originOf, useTheme } from "../utils/useTheme";
+import Magnetic from "./motion/Magnetic";
+import {
+  Flip,
+  reducedMotion,
+  registerMotion,
+  ScrollSmoother,
+} from "../utils/motion";
 
 const sectionIds = ["hero", "work", "about", "contact"];
+
+const links = [
+  { id: "hero", label: "Home" },
+  { id: "work", label: "Work" },
+  { id: "about", label: "About" },
+];
 
 /** Compact sun/moon switch for the nav — the hero's toggle stays the hero piece. */
 const ThemeButton = ({ className = "" }: { className?: string }) => {
@@ -12,7 +25,7 @@ const ThemeButton = ({ className = "" }: { className?: string }) => {
   return (
     <button
       type="button"
-      onClick={toggle}
+      onClick={(event) => toggle(originOf(event.currentTarget))}
       aria-label={`Switch to ${dark ? "light" : "dark"} mode`}
       aria-pressed={dark}
       title={`Switch to ${dark ? "light" : "dark"} mode`}
@@ -39,12 +52,6 @@ const ThemeButton = ({ className = "" }: { className?: string }) => {
     </button>
   );
 };
-
-const links = [
-  { id: "hero", label: "Home" },
-  { id: "work", label: "Work" },
-  { id: "about", label: "About" },
-];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -81,6 +88,36 @@ export default function Navbar() {
     return () => observer.disconnect();
   }, []);
 
+  // The active-link highlight is a single element that glides between links
+  // (GSAP Flip). It's created outside React so moving it in the DOM is safe.
+  const navList = useRef<HTMLUListElement>(null);
+  const highlight = useRef<HTMLSpanElement | null>(null);
+  useEffect(() => {
+    const list = navList.current;
+    if (!list) return;
+    const target = list.querySelector<HTMLLIElement>(`li[data-nav="${active}"]`);
+    if (!target) return;
+
+    if (!highlight.current) {
+      const span = document.createElement("span");
+      span.setAttribute("aria-hidden", "true");
+      span.className = "absolute inset-0 rounded-full bg-fg/10";
+      highlight.current = span;
+      target.appendChild(span);
+      return;
+    }
+    const el = highlight.current;
+    if (target.contains(el)) return;
+    if (reducedMotion()) {
+      target.appendChild(el);
+      return;
+    }
+    registerMotion();
+    const state = Flip.getState(el);
+    target.appendChild(el);
+    Flip.from(state, { duration: 0.45, ease: "power3.out" });
+  }, [active]);
+
   // Thin reading-progress bar along the bottom edge of the nav. Updated
   // directly on the element (no re-render) and throttled to one frame.
   const progress = useRef<HTMLDivElement>(null);
@@ -113,20 +150,20 @@ export default function Navbar() {
     if (!open) return;
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
+    ScrollSmoother.get()?.paused(true);
     const onKey = (event: KeyboardEvent) => {
       if (event.key === "Escape") setOpen(false);
     };
     window.addEventListener("keydown", onKey);
     return () => {
       document.body.style.overflow = previousOverflow;
+      ScrollSmoother.get()?.paused(false);
       window.removeEventListener("keydown", onKey);
     };
   }, [open]);
 
-  const desktopLink = (id: string) =>
-    `rounded-full px-3 py-2 text-[13px] font-semibold transition hover:bg-fg/10 ${
-      active === id ? "bg-fg/10" : ""
-    }`;
+  const desktopLink =
+    "relative z-10 block rounded-full px-3 py-2 text-[13px] font-semibold transition hover:bg-fg/10";
 
   const mobileLinks = [...links, { id: "contact", label: "Contact" }];
 
@@ -144,30 +181,35 @@ export default function Navbar() {
           </Link>
 
           <div className="hidden items-center gap-3 md:flex">
-            <ul className="flex items-center rounded-full border border-line bg-surface px-2 py-1">
+            <ul
+              ref={navList}
+              className="flex items-center rounded-full border border-line bg-surface px-2 py-1"
+            >
               {links.map((link) => (
-                <li key={link.id}>
+                <li key={link.id} data-nav={link.id} className="relative">
                   <Link href={`/#${link.id}`}>
-                    <a className={desktopLink(link.id)}>{link.label}</a>
+                    <a className={desktopLink}>{link.label}</a>
                   </Link>
                 </li>
               ))}
-              <li>
+              <li className="relative">
                 <a
                   href="https://kokua.wiki"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={desktopLink("")}
+                  className={desktopLink}
                 >
                   Resources
                 </a>
               </li>
             </ul>
-            <Link href="/#contact">
-              <a className="rounded-full bg-fg px-4 py-2 text-[13px] font-bold text-bg transition duration-300 hover:-translate-y-0.5 hover:opacity-85">
-                Get in Touch
-              </a>
-            </Link>
+            <Magnetic strength={0.3}>
+              <Link href="/#contact">
+                <a className="block rounded-full bg-fg px-4 py-2 text-[13px] font-bold text-bg transition duration-300 hover:opacity-85">
+                  Get in Touch
+                </a>
+              </Link>
+            </Magnetic>
             <ThemeButton />
           </div>
 
