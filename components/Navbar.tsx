@@ -203,7 +203,7 @@ export default function Navbar() {
                 </a>
               </li>
             </ul>
-            <Magnetic strength={0.3}>
+            <Magnetic>
               <Link href="/#contact">
                 <a className="block rounded-full bg-fg px-4 py-2 text-[13px] font-bold text-bg transition duration-300 hover:opacity-85">
                   Get in Touch

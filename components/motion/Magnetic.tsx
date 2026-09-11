@@ -11,27 +11,26 @@ type Props = {
 };
 
 /**
- * Pulls its child toward the pointer while hovered and springs it back on
- * leave. The inline wrapper is padded so the pull starts a little before
- * the edge.
+ * Lets its child lean gently toward the pointer while hovered, then settle
+ * back. Deliberately subtle: it only reacts while the pointer is actually
+ * over the element, and moves a fraction of the distance.
  */
-const Magnetic = ({ children, strength = 0.35, block = false, className = "" }: Props) => {
+const Magnetic = ({ children, strength = 0.12, block = false, className = "" }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const el = ref.current;
     if (!el || !finePointer() || reducedMotion()) return;
 
-    const moveX = gsap.quickTo(el, "x", { duration: 0.4, ease: "power3" });
-    const moveY = gsap.quickTo(el, "y", { duration: 0.4, ease: "power3" });
+    const moveX = gsap.quickTo(el, "x", { duration: 0.5, ease: "power2.out" });
+    const moveY = gsap.quickTo(el, "y", { duration: 0.5, ease: "power2.out" });
 
     const move = (event: MouseEvent) => {
       const rect = el.getBoundingClientRect();
       moveX((event.clientX - (rect.left + rect.width / 2)) * strength);
       moveY((event.clientY - (rect.top + rect.height / 2)) * strength);
     };
-    const leave = () =>
-      gsap.to(el, { x: 0, y: 0, duration: 0.7, ease: "elastic.out(1, 0.45)" });
+    const leave = () => gsap.to(el, { x: 0, y: 0, duration: 0.5, ease: "power3.out" });
 
     el.addEventListener("mousemove", move, { passive: true });
     el.addEventListener("mouseleave", leave);
@@ -42,10 +41,7 @@ const Magnetic = ({ children, strength = 0.35, block = false, className = "" }: 
   }, [strength]);
 
   return (
-    <div
-      ref={ref}
-      className={`${block ? "block" : "inline-block p-3 -m-3"} ${className}`}
-    >
+    <div ref={ref} className={`${block ? "block" : "inline-block"} ${className}`}>
       {children}
     </div>
   );

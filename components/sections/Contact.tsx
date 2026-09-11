@@ -148,7 +148,7 @@ const Contact = () => {
               required
             />
           </div>
-          <Magnetic block strength={0.15}>
+          <Magnetic block strength={0.06}>
             <button
               type="submit"
               disabled={loading}

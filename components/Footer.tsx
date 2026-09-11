@@ -41,7 +41,7 @@ const Footer = () => {
               — from the interface to the API.
             </p>
             <div className="mt-6">
-              <Magnetic strength={0.3}>
+              <Magnetic>
                 <Link href="/#contact">
                   <a className="block rounded-full bg-fg px-5 py-3 text-sm font-bold text-bg transition duration-300 hover:opacity-85">
                     Start a project
