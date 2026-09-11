@@ -17,7 +17,16 @@
 
 # misc
 .DS_Store
+Thumbs.db
 *.pem
+*.log
+
+# editors
+.vscode/
+.idea/
+
+# netlify cli
+.netlify/
 
 # debug
 npm-debug.log*
