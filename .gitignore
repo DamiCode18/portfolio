@@ -29,6 +29,9 @@ yarn-error.log*
 .env*.local
 .env
 
+# per-machine editor/tooling config
+.claude/
+
 # vercel
 .vercel
 

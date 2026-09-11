@@ -1,0 +1,5 @@
+# Next.js 12's image tooling breaks on Node 18+ (its optimizer calls fetch()
+# with a file path), so builds must run on Node 16 until Next is upgraded.
+# NEXT_PUBLIC_EMAIL_API and NEXT_PUBLIC_CV are set in the Netlify UI, not here.
+[build.environment]
+  NODE_VERSION = "16.16.0"

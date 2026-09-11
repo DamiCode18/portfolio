@@ -2,19 +2,144 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Body face: Geist Pixel Square (Vercel, OFL — licence in public/fonts).
+   Self-hosted because Next 12 predates next/font. Single weight. */
+@font-face {
+  font-family: "Geist Pixel Square";
+  src: url("/fonts/GeistPixel-Square.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Light theme (default). Dark overrides live in .dark below, and the class is
+   applied to <html> by the no-flash script in _document.js. */
+:root {
+  color-scheme: light;
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --fg: #0a0a0a;
+  --muted: #4b5563;
+  --subtle: #6b7280;
+  --border: #e2e2e2;
+  --border-strong: #c9c9c9;
+  /* outlined display type: light fill, dark outline */
+  --display-fill: #ffffff;
+  --display-outline: #0a0a0a;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #000000;
+  --surface: #0a0a0a;
+  --fg: #ffffff;
+  --muted: #d1d5db;
+  --subtle: #9ca3af;
+  --border: #2a2a2a;
+  --border-strong: #474444;
+  /* outlined display type: dark fill, light outline */
+  --display-fill: #000000;
+  --display-outline: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+  /* keeps anchored sections clear of the fixed navbar */
+  scroll-padding-top: 90px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 html,
 body {
   min-height: 100%;
   padding: 0;
   margin: 0;
-  background: #000000;
-  color: #ffffff;
-  font-family: -apple-system, "League Spartan", BlinkMacSystemFont, Segoe UI,
-    Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-    sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: "Geist Pixel Square", "Geist Mono", ui-monospace, SFMono-Regular,
+    Menlo, Monaco, "Courier New", monospace;
+  /* the pixel face has one weight; faux-bold would smear the pixel grid */
+  font-synthesis: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .socials {
   cursor: pointer;
+}
+
+/* Keyboard users can jump past the nav; visible only while focused. */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: 60;
+  padding: 0.75rem 1.25rem;
+  border-radius: 9999px;
+  background: var(--fg);
+  color: var(--bg);
+  font-weight: 700;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Scroll-in reveal (components/Reveal.tsx). Only hides when JS is running. */
+.js .reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.js .reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Hero entrance is driven by GSAP; keep elements hidden until it starts. */
+.js .hero-anim {
+  opacity: 0;
+}
+
+/* Crossfade surfaces while the theme toggles (class added by useTheme). */
+html.theme-switching,
+html.theme-switching *,
+html.theme-switching *::before,
+html.theme-switching *::after {
+  transition: background-color 0.35s ease, color 0.35s ease,
+    border-color 0.35s ease, fill 0.35s ease, transform 0.3s ease !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal,
+  .js .hero-anim {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .animate-marquee,
+  .animate-drift,
+  .animate-wave,
+  .animate-giggle {
+    animation: none;
+  }
+}
+
+/* multi-line truncation (line-clamp only landed in Tailwind 3.3) */
+.clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.clamp-1 {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 a {
@@ -26,7 +151,6 @@ a {
   box-sizing: border-box;
 }
 h1 {
-  /* font-family: "Sofia Pro"; */
   font-style: normal;
   font-weight: 900;
   font-size: 48px;
@@ -38,7 +162,7 @@ h1 {
   color: #fff;
 }
 .txt-shadow {
-  color: #000000;
+  color: var(--display-fill);
   text-shadow: rgb(255, 122, 0) 3px 0px 0px,
     rgb(255, 122, 0) 2.83487px 0.981584px 0px,
     rgb(255, 122, 0) 2.35766px 1.85511px 0px,
@@ -60,29 +184,54 @@ h1 {
     rgb(255, 122, 0) 2.88051px -0.838247px 0px;
 }
 
+/* Outlined display type: the fill/outline pair flips with the theme. */
 .bolder-text {
-  color: #000000;
-  text-shadow: rgb(255 255 255) 3px 0px 0px,
-    rgb(255 255 255) 2.83487px 0.981584px 0px,
-    rgb(255 255 255) 2.35766px 1.85511px 0px,
-    rgb(255 255 255) 1.62091px 2.52441px 0px,
-    rgb(255 255 255) 0.705713px 2.91581px 0px,
-    rgb(255 255 255) -0.287171px 2.98622px 0px,
-    rgb(255 255 255) -1.24844px 2.72789px 0px,
-    rgb(255 255 255) -2.07227px 2.16926px 0px,
-    rgb(255 255 255) -2.66798px 1.37182px 0px,
-    rgb(255 255 255) -2.96998px 0.42336px 0px,
-    rgb(255 255 255) -2.94502px -0.571704px 0px,
-    rgb(255 255 255) -2.59586px -1.50383px 0px,
-    rgb(255 255 255) -1.96093px -2.27041px 0px,
-    rgb(255 255 255) -1.11013px -2.78704px 0px,
-    rgb(255 255 255) -0.137119px -2.99686px 0px,
-    rgb(255 255 255) 0.850987px -2.87677px 0px,
-    rgb(255 255 255) 1.74541px -2.43999px 0px,
-    rgb(255 255 255) 2.44769px -1.73459px 0px,
-    rgb(255 255 255) 2.88051px -0.838247px 0px;
+  color: var(--display-fill);
+  text-shadow: var(--display-outline) 3px 0px 0px,
+    var(--display-outline) 2.83487px 0.981584px 0px,
+    var(--display-outline) 2.35766px 1.85511px 0px,
+    var(--display-outline) 1.62091px 2.52441px 0px,
+    var(--display-outline) 0.705713px 2.91581px 0px,
+    var(--display-outline) -0.287171px 2.98622px 0px,
+    var(--display-outline) -1.24844px 2.72789px 0px,
+    var(--display-outline) -2.07227px 2.16926px 0px,
+    var(--display-outline) -2.66798px 1.37182px 0px,
+    var(--display-outline) -2.96998px 0.42336px 0px,
+    var(--display-outline) -2.94502px -0.571704px 0px,
+    var(--display-outline) -2.59586px -1.50383px 0px,
+    var(--display-outline) -1.96093px -2.27041px 0px,
+    var(--display-outline) -1.11013px -2.78704px 0px,
+    var(--display-outline) -0.137119px -2.99686px 0px,
+    var(--display-outline) 0.850987px -2.87677px 0px,
+    var(--display-outline) 1.74541px -2.43999px 0px,
+    var(--display-outline) 2.44769px -1.73459px 0px,
+    var(--display-outline) 2.88051px -0.838247px 0px;
+}
+
+.bolder-text {
+  color: var(--display-fill);
+  text-shadow: var(--display-outline) 3px 0px 0px,
+    var(--display-outline) 2.83487px 0.981584px 0px,
+    var(--display-outline) 2.35766px 1.85511px 0px,
+    var(--display-outline) 1.62091px 2.52441px 0px,
+    var(--display-outline) 0.705713px 2.91581px 0px,
+    var(--display-outline) -0.287171px 2.98622px 0px,
+    var(--display-outline) -1.24844px 2.72789px 0px,
+    var(--display-outline) -2.07227px 2.16926px 0px,
+    var(--display-outline) -2.66798px 1.37182px 0px,
+    var(--display-outline) -2.96998px 0.42336px 0px,
+    var(--display-outline) -2.94502px -0.571704px 0px,
+    var(--display-outline) -2.59586px -1.50383px 0px,
+    var(--display-outline) -1.96093px -2.27041px 0px,
+    var(--display-outline) -1.11013px -2.78704px 0px,
+    var(--display-outline) -0.137119px -2.99686px 0px,
+    var(--display-outline) 0.850987px -2.87677px 0px,
+    var(--display-outline) 1.74541px -2.43999px 0px,
+    var(--display-outline) 2.44769px -1.73459px 0px,
+    var(--display-outline) 2.88051px -0.838247px 0px;
 }
 .head-shadow {
-  color: #000000;
-  text-shadow: 1px 0 0 #fff, 0 -1px 0 #fff, 0 1px 0 #fff, -1px 0 0 #fff;
+  color: var(--display-fill);
+  text-shadow: 1px 0 0 var(--display-outline), 0 -1px 0 var(--display-outline),
+    0 1px 0 var(--display-outline), -1px 0 0 var(--display-outline);
 }

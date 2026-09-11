@@ -1,165 +1,283 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { FcHome, FcAbout, FcContacts, FcBriefcase, FcStackOfPhotos } from 'react-icons/fc';
+import Socials from "../utils/socials";
+import { useTheme } from "../utils/useTheme";
 
+const sectionIds = ["hero", "work", "about", "contact"];
+
+/** Compact sun/moon switch for the nav — the hero's toggle stays the hero piece. */
+const ThemeButton = ({ className = "" }: { className?: string }) => {
+  const { theme, toggle } = useTheme();
+  const dark = theme === "dark";
+  return (
+    <button
+      type="button"
+      onClick={toggle}
+      aria-label={`Switch to ${dark ? "light" : "dark"} mode`}
+      aria-pressed={dark}
+      title={`Switch to ${dark ? "light" : "dark"} mode`}
+      className={`flex h-9 w-9 items-center justify-center rounded-full border border-line bg-surface text-fg transition duration-300 hover:border-accent hover:text-accent ${className}`}
+    >
+      {dark ? (
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" className="h-4 w-4">
+          <path d="M20 14.5A8.5 8.5 0 1 1 9.5 4a7 7 0 1 0 10.5 10.5z" />
+        </svg>
+      ) : (
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          aria-hidden="true"
+          className="h-4 w-4"
+        >
+          <circle cx="12" cy="12" r="4" fill="currentColor" stroke="none" />
+          <path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M18.7 5.3l-1.4 1.4M6.7 17.3l-1.4 1.4" />
+        </svg>
+      )}
+    </button>
+  );
+};
+
+const links = [
+  { id: "hero", label: "Home" },
+  { id: "work", label: "Work" },
+  { id: "about", label: "About" },
+];
 
 export default function Navbar() {
-  const router = useRouter();
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("hero");
+  // The observer reports only the entries that changed, so we track the
+  // visibility of every section across callbacks.
+  const visible = useRef<Record<string, boolean>>({});
+
+  useEffect(() => {
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((el): el is HTMLElement => el !== null);
+
+    if (sections.length === 0) return;
+
+    // Watch a narrow strip just below the fixed navbar, so the section
+    // currently sitting under it is the one highlighted. Two sections can
+    // straddle that strip at once, in which case the lower one has just
+    // scrolled into place and should win.
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          visible.current[entry.target.id] = entry.isIntersecting;
+        });
+        const lowest = [...sectionIds]
+          .reverse()
+          .find((id) => visible.current[id]);
+        if (lowest) setActive(lowest);
+      },
+      { rootMargin: "-80px 0px -70% 0px", threshold: 0 }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  // Thin reading-progress bar along the bottom edge of the nav. Updated
+  // directly on the element (no re-render) and throttled to one frame.
+  const progress = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      const max =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const ratio = max > 0 ? Math.min(window.scrollY / max, 1) : 0;
+      if (progress.current) {
+        progress.current.style.transform = `scaleX(${ratio})`;
+      }
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      if (frame) cancelAnimationFrame(frame);
+    };
+  }, []);
+
+  // While the mobile menu is open: lock page scroll and close on Escape.
+  useEffect(() => {
+    if (!open) return;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      window.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
+
+  const desktopLink = (id: string) =>
+    `rounded-full px-3 py-2 text-[13px] font-semibold transition hover:bg-fg/10 ${
+      active === id ? "bg-fg/10" : ""
+    }`;
+
+  const mobileLinks = [...links, { id: "contact", label: "Contact" }];
+
   return (
     <>
-      <nav className="fixed w-full z-40 flex top-0 overflow-hidden flex-wrap items-center justify-between px-2 py-3 mb-10 bg-black">
-        <div className="container px-4 mx-auto flex flex-wrap items-center justify-between">
-          <div
-            className={
-              navbarOpen
-                ? "hidden"
-                : `w-full relative flex justify-between md:w-auto lg:static lg:block lg:justify-start`
-            }
-          >
-            <Link href="/">
-              <a className="text-xl txt-shadow font-extrabold leading-relaxed inline-block mr-4 py-2 whitespace-nowrap text-white">
-                DamiCode
-              </a>
-            </Link>
-            <button
-              className="text-white bg-white cursor-pointer text-xl tracking-tight leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block md:hidden outline-none focus:outline-none"
-              type="button"
-              onClick={() => setNavbarOpen(!navbarOpen)}
+      <nav className="fixed top-0 z-40 w-full bg-bg/80 backdrop-blur-md">
+        <div className="mx-[6%] flex items-center justify-between py-4">
+          <Link href="/#hero">
+            <a
+              onClick={() => setOpen(false)}
+              className="txt-shadow text-xl font-extrabold leading-relaxed"
             >
-              <span className="sr-only">Main Menu</span>
-              {!navbarOpen && (
-                <svg
-                  className="w-6 h-6"
-                  aria-hidden="true"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                    clipRule="evenodd"
-                  ></path>
-                </svg>
-              )}
-            </button>
-          </div>
-          <div
-            className={
-              "transition duration-1000 ease-in md:flex flex-grow items-center justify-center relative" +
-              (navbarOpen
-                ? " bg-slate-800 opacity-80 h-[100vh] flex"
-                : " hidden")
-            }
-            id="example-navbar-danger"
-          >
-            {navbarOpen && (
-              <svg
-                onClick={() => setNavbarOpen(!navbarOpen)}
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={2.2}
-                stroke="currentColor"
-                className="w-6 h-6 font-bold absolute right-3 top-3"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  d="M6 18L18 6M6 6l12 12"
-                />
-              </svg>
-            )}
-            <ul className="flex flex-col md:flex-row list-none md:ml-auto">
-              <li className="nav-item">
-                <Link
-                  href="/"
-                  className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4"
-                >
-                  <a
-                    onClick={() => setNavbarOpen(false)}
-                    className={`text-[13px] px-3 py-2 flex items-center hover:opacity-75 ${
-                      router.route === "/" && "underline"
-                    }`}
-                  >
-                    <span className="place-self-start text-[20px]"><FcHome /></span>
-                    Home
-                  </a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  href="/projects"
-                  className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4"
-                >
-                  <a
-                    onClick={() => setNavbarOpen(false)}
-                    className={`text-[13px] px-3 py-2 flex items-center hover:opacity-75 ${
-                      router.route === "/projects" && "underline"
-                    }`}
-                  >
-                    <span className="place-self-start text-[20px]"><FcBriefcase /></span>
-                    Projects
-                  </a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  href="/about"
-                  className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4"
-                >
-                  <a
-                    onClick={() => setNavbarOpen(false)}
-                    className={`text-[13px] px-3 py-2 flex items-center hover:opacity-75 ${
-                      router.route === "/about" && "underline"
-                    }`}
-                  >
-                    
-                    <span className="place-self-start text-[20px]"><FcAbout /></span>
-                    About Me
-                  </a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
+              DamiCode
+            </a>
+          </Link>
+
+          <div className="hidden items-center gap-3 md:flex">
+            <ul className="flex items-center rounded-full border border-line bg-surface px-2 py-1">
+              {links.map((link) => (
+                <li key={link.id}>
+                  <Link href={`/#${link.id}`}>
+                    <a className={desktopLink(link.id)}>{link.label}</a>
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
                   href="https://kokua.wiki"
-                  passHref
-                  className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={desktopLink("")}
                 >
-                  <a
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className={
-                      "text-[13px] px-3 py-2 flex items-center hover:opacity-75"
-                    }
-                  >
-                    <span className="place-self-start text-[20px]"><FcStackOfPhotos /></span>
-                    Resources
-                  </a>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link
-                  href="/contact"
-                  className="block mt-4 lg:inline-block lg:mt-0 text-grey-200 hover:text-white mr-4"
-                >
-                  <a
-                    onClick={() => setNavbarOpen(false)}
-                    className={`text-[13px] px-3 py-2 flex items-center hover:opacity-75 ${
-                      router.route === "/contact" && "underline"
-                    }`}
-                  >
-                    <span className="place-self-start text-[20px]"><FcContacts /></span>
-                    Contact
-                  </a>
-                </Link>
+                  Resources
+                </a>
               </li>
             </ul>
+            <Link href="/#contact">
+              <a className="rounded-full bg-fg px-4 py-2 text-[13px] font-bold text-bg transition duration-300 hover:-translate-y-0.5 hover:opacity-85">
+                Get in Touch
+              </a>
+            </Link>
+            <ThemeButton />
           </div>
+
+          <button
+            type="button"
+            onClick={() => setOpen((value) => !value)}
+            aria-expanded={open}
+            aria-controls="mobile-menu"
+            aria-label={open ? "Close menu" : "Open menu"}
+            className="relative flex h-10 w-10 items-center justify-center md:hidden"
+          >
+            <span
+              className={`absolute h-[2px] w-6 rounded bg-fg transition duration-300 ${
+                open ? "rotate-45" : "-translate-y-[4px]"
+              }`}
+            />
+            <span
+              className={`absolute h-[2px] w-6 rounded bg-fg transition duration-300 ${
+                open ? "-rotate-45" : "translate-y-[4px]"
+              }`}
+            />
+          </button>
         </div>
+
+        <div
+          ref={progress}
+          aria-hidden="true"
+          className="absolute bottom-0 left-0 h-[2px] w-full origin-left bg-accent"
+          style={{ transform: "scaleX(0)" }}
+        />
       </nav>
+
+      {/* Full-screen mobile menu. Sits beneath the nav so the brand and the
+          close button stay put; opaque so nothing bleeds through. */}
+      <div
+        id="mobile-menu"
+        aria-hidden={!open}
+        className={`fixed inset-0 z-30 flex flex-col bg-bg px-[6%] pb-10 pt-28 transition-[opacity,visibility] duration-300 md:hidden ${
+          open ? "visible opacity-100" : "invisible opacity-0"
+        }`}
+      >
+        <ul>
+          {mobileLinks.map((link, i) => (
+            <li
+              key={link.id}
+              className={`transition duration-500 ease-out ${
+                open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+              }`}
+              style={{ transitionDelay: open ? `${80 + i * 60}ms` : "0ms" }}
+            >
+              <Link href={`/#${link.id}`}>
+                <a
+                  onClick={() => setOpen(false)}
+                  className={`flex items-baseline gap-4 border-b border-line py-4 font-display text-4xl font-black uppercase tracking-tight transition-colors ${
+                    active === link.id ? "text-accent" : "text-fg"
+                  }`}
+                >
+                  <span className="text-xs font-bold tracking-widest text-subtle">
+                    0{i + 1}
+                  </span>
+                  {link.label}
+                </a>
+              </Link>
+            </li>
+          ))}
+          <li
+            className={`transition duration-500 ease-out ${
+              open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+            }`}
+            style={{
+              transitionDelay: open ? `${80 + mobileLinks.length * 60}ms` : "0ms",
+            }}
+          >
+            <a
+              href="https://kokua.wiki"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-baseline gap-4 py-4 font-display text-4xl font-black uppercase tracking-tight text-fg"
+            >
+              <span className="text-xs font-bold tracking-widest text-subtle">
+                0{mobileLinks.length + 1}
+              </span>
+              Resources
+              <span aria-hidden="true" className="text-2xl text-subtle">
+                ↗
+              </span>
+            </a>
+          </li>
+        </ul>
+
+        <div
+          className={`mt-auto flex items-center justify-between transition duration-500 ease-out ${
+            open ? "translate-y-0 opacity-100" : "translate-y-6 opacity-0"
+          }`}
+          style={{ transitionDelay: open ? "420ms" : "0ms" }}
+        >
+          <div className="flex items-center">
+            <Socials />
+            <ThemeButton className="ml-2" />
+          </div>
+          <Link href="/#contact">
+            <a
+              onClick={() => setOpen(false)}
+              className="whitespace-nowrap rounded-full bg-fg px-5 py-3 text-sm font-bold text-bg"
+            >
+              Get in Touch
+            </a>
+          </Link>
+        </div>
+      </div>
     </>
   );
 }

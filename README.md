@@ -1,34 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Damilare Adebayo — Portfolio
 
-## Getting Started
+Single-page portfolio built with Next.js 12, TypeScript and Tailwind CSS.
+Live at [damicode.netlify.app](https://damicode.netlify.app).
 
-First, run the development server:
+## Running locally
+
+Next 12's image tooling breaks on Node 18+, so use Node 16 (`.nvmrc` pins it):
 
 ```bash
+nvm use
+npm install
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Create a `.env` with:
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```
+NEXT_PUBLIC_EMAIL_API=   # endpoint the contact form posts to
+NEXT_PUBLIC_CV=          # URL of the résumé PDF
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+## Structure
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- `pages/index.tsx` — composes the sections in `components/sections/`
+  (`Hero`, `Work`, `About`, `Contact`)
+- `utils/projects.ts` — project data; images live in `public/*.webp`
+- `components/ThemeToggle.tsx` + `utils/useTheme.ts` — light/dark mode,
+  persisted in `localStorage`, applied before first paint by `pages/_document.js`
+- `styles/globals.css` — theme tokens (CSS variables), fonts, reveal/motion helpers
 
-## Learn More
+## Deploying
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Netlify. `netlify.toml` pins `NODE_VERSION`; set the two env vars above in the
+Netlify UI. Old routes (`/projects`, `/about`, `/contact`) redirect to their
+sections on the home page (see `next.config.js`).
