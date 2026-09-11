@@ -37,8 +37,9 @@ const Cursor = () => {
       const interactive = (event.target as Element).closest(
         "a, button, [role='button'], input, textarea, select, label"
       );
-      gsap.to(ring.current, { scale: interactive ? 2.2 : 1, duration: 0.3, ease: "power3.out" });
-      gsap.to(dot.current, { scale: interactive ? 0.4 : 1, duration: 0.3, ease: "power3.out" });
+      // a small grow on hover reads as "interactive" without swallowing the element
+      gsap.to(ring.current, { scale: interactive ? 1.3 : 1, duration: 0.3, ease: "power3.out" });
+      gsap.to(dot.current, { scale: interactive ? 0.6 : 1, duration: 0.3, ease: "power3.out" });
     };
     const leave = () => gsap.to([dot.current, ring.current], { opacity: 0, duration: 0.2 });
 
