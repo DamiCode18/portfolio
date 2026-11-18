@@ -11,15 +11,6 @@ export const projectData = [
   },
   {
     id: uuidv4(),
-    url: "https://urltrim.xyz",
-    title: "Urltrim",
-    imgUrl: `/Ulrtrim.webp`,
-    description:
-      "Create, share, and track your links with ease. Build your brand with every click using our professional, lightning-fast URL shortening service.",
-    skills: ["Tailwindcss", "Javascript", "Nextjs", "TypeScript", "React-query", "Nestjs", "Prisma", "Postgres"],
-  },
-  {
-    id: uuidv4(),
     url: "https://kyshi.co",
     title: "Kyshi",
     imgUrl: `/Kyshi.webp`,
