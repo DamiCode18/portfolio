@@ -35,17 +35,16 @@ const Work = () => {
               rel="noreferrer"
               className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface transition duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-xl"
             >
-              {/* Oversized inner block drifts at a different speed to the page
-                  (ScrollSmoother `data-speed`), giving a subtle parallax. */}
-              <div className="h-64 overflow-hidden md:h-72">
-                <div data-speed="0.92" className="-mt-[12%] h-[124%]">
-                  <img
-                    className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-[1.04]"
-                    src={project.imgUrl}
-                    alt={project.title}
-                    loading="lazy"
-                  />
-                </div>
+              {/* Shaped like the screenshots (all ~1400×726) so each shows whole.
+                  The old fixed-height box with an oversized parallax layer
+                  zoomed them and cut off their edges. */}
+              <div className="aspect-[1400/726] overflow-hidden">
+                <img
+                  className="h-full w-full object-cover object-top transition duration-700 ease-out group-hover:scale-[1.04]"
+                  src={project.imgUrl}
+                  alt={project.title}
+                  loading="lazy"
+                />
               </div>
               <div className="flex flex-1 flex-col p-8">
                 <div className="flex items-start justify-between gap-4">
