@@ -2,6 +2,15 @@ import { v4 as uuidv4 } from "uuid";
 export const projectData = [
   {
     id: uuidv4(),
+    url: "https://wakabuddy.xyz",
+    title: "WakaBuddy",
+    imgUrl: `/Wakabuddy.webp`,
+    description:
+      "A social walking app on iPhone and Android. It reads the steps a phone or watch already counts (Apple Health, Health Connect, Samsung Health) and turns them into leaderboards, challenges and weekly leagues with friends.",
+    skills: ["React Native", "Expo", "TypeScript", "NestJS", "Prisma", "Postgres", "Next.js", "RevenueCat"],
+  },
+  {
+    id: uuidv4(),
     url: "https://aiido.co",
     title: "Aiido",
     imgUrl: `/Aiido.webp`,
