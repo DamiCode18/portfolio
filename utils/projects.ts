@@ -95,29 +95,12 @@ export const projectData = [
   },
   {
     id: uuidv4(),
-    url: "https://bodsquare.com",
-    title: "BodSquare",
-    imgUrl: `/Bodsquare.webp`,
-    description: "This is the official Bodsquare website",
-    skills: ["CSS", "HTML", "Javascript", "React", "ChakraUI", "TypeScript"],
-  },
-  {
-    id: uuidv4(),
     url: "https://www.sendchamp.com/",
     title: "Sendchamp",
     imgUrl: `/Sendchamp.webp`,
     description:
       "Sendchamp is the most seamless messaging platform for growing businesses. Send messages to your customers across WhatsApp, SMS, email, and voice - all with zero coding skills to get started.",
     skills: ["Chakra", "HTML", "Javascript", "React", "TypeScript", "Recoiljs"],
-  },
-  {
-    id: uuidv4(),
-    url: "https://anonn.xyz",
-    title: "Anonn - Anonymous Chat",
-    imgUrl: `/Anonn.webp`,
-    description:
-      "Anonymously chat with people, they are free to say anything to you since you never get to know who you're chatting with except they tell you",
-    skills: ["Tailwindcss", "HTML", "Javascript", "Nextjs", "TypeScript"],
   },
   {
     id: uuidv4(),
@@ -128,21 +111,4 @@ export const projectData = [
       "Just a portfolio app, that shows all my projects, I bet you're currently viewing it",
     skills: ["CSS", "HTML", "Javascript", "Nextjs", "TypeScript"],
   },
-  {
-    id: uuidv4(),
-    url: "https://dash.bodsquare.com",
-    title: "BodSquare WebApp",
-    imgUrl: `/Bodsquare-dashboard.webp`,
-    description:
-      "Bodsquare allows for businesses to follow up with their customers from the moment they contact them until the end, regardless of the platform used.",
-    skills: [
-      "CSS",
-      "HTML",
-      "Javascript",
-      "TypeScript",
-      "React",
-      "ChakraUI",
-      "Recoiljs",
-    ],
-  }
 ];
