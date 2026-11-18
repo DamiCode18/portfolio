@@ -14,7 +14,6 @@ const sectionIds = ["hero", "work", "about", "contact"];
 
 const links = [
   { id: "hero", label: "Home" },
-  { id: "mobile", label: "Mobile" },
   { id: "work", label: "Work" },
   { id: "about", label: "About" },
 ];
