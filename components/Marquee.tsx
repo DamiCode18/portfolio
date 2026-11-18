@@ -8,6 +8,10 @@ import {
 
 type Props = {
   text: string;
+  /** Makes the whole band a link, e.g. "#contact". */
+  href?: string;
+  /** Accessible name for the link; the repeated text is hidden from screen readers. */
+  label?: string;
   className?: string;
 };
 
@@ -16,7 +20,7 @@ type Props = {
  * faster scrolling speeds it up and skews the letters, then it settles.
  * Without JS the CSS `animate-marquee` keyframes take over.
  */
-const Marquee = ({ text, className = "" }: Props) => {
+const Marquee = ({ text, href, label, className = "" }: Props) => {
   const track = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -65,13 +69,25 @@ const Marquee = ({ text, className = "" }: Props) => {
     </span>
   );
 
-  return (
-    <div className={`w-full overflow-hidden whitespace-nowrap border-y border-line-strong py-3 ${className}`}>
-      <div ref={track} className="inline-flex w-max animate-marquee">
-        {Array.from({ length: 8 }).map((_, i) => item(i))}
-        {Array.from({ length: 8 }).map((_, i) => item(i + 8))}
-      </div>
+  const band = `block w-full overflow-hidden whitespace-nowrap border-y border-line-strong py-3 ${className}`;
+  const content = (
+    <div ref={track} aria-hidden={href ? true : undefined} className="inline-flex w-max animate-marquee">
+      {Array.from({ length: 8 }).map((_, i) => item(i))}
+      {Array.from({ length: 8 }).map((_, i) => item(i + 8))}
     </div>
+  );
+
+  // The band pauses on hover (see the effect), so it reads as a button to press.
+  return href ? (
+    <a
+      href={href}
+      aria-label={label ?? text}
+      className={`${band} transition-colors duration-300 hover:border-accent hover:text-accent focus-visible:text-accent`}
+    >
+      {content}
+    </a>
+  ) : (
+    <div className={band}>{content}</div>
   );
 };
 

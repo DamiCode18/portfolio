@@ -28,7 +28,7 @@ const eyebrowClass = "text-xs font-bold uppercase tracking-[0.3em] text-subtle";
 const Footer = () => {
   return (
     <footer className="mt-24">
-      <Marquee text="Get in touch •" />
+      <Marquee text="Get in touch •" href="#contact" label="Get in touch" />
 
       <Reveal>
         <div className="mx-[6%] grid grid-cols-1 gap-12 py-16 md:grid-cols-[1.6fr_1fr_1fr]">
