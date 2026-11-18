@@ -8,7 +8,7 @@ import Contact from "../components/sections/Contact";
 const Home: NextPage = () => {
   return (
     <>
-      <Seo description="Damilare Adebayo — mobile engineer building React Native apps for iOS and Android, down to native Swift and Kotlin. 7+ years shipping products end to end." />
+      <Seo description="Damilare Adebayo — software engineer with 7+ years building fast, accessible products end to end: React and Next.js on the web, React Native on iOS and Android, and Node and Postgres backends." />
       <main>
         <Hero />
         <Work />

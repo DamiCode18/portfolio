@@ -4,7 +4,7 @@ import React, { FC } from "react";
 const SITE_URL = "https://damicode.netlify.app";
 const SITE_NAME = "Damilare Adebayo";
 const DEFAULT_DESCRIPTION =
-  "Mobile engineer building React Native apps for iOS and Android, down to native Swift and Kotlin modules. 7+ years shipping fast, accessible products end to end.";
+  "Software engineer with 7+ years of experience building fast, accessible products end to end — React & Next.js on the web, React Native on iOS and Android, and Node & Postgres backends.";
 
 // `key`s let a page-level <Seo> override the one rendered in _app.
 const Seo: FC<{ title?: string; description?: string }> = ({

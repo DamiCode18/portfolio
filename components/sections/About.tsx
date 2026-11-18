@@ -23,8 +23,8 @@ const traits: {
 
 const facts = [
   { label: "Experience", value: "7+ years" },
-  { label: "Focus", value: "Mobile engineering (iOS & Android)" },
-  { label: "Stack", value: "React Native · Expo · Swift · Kotlin · Node · Postgres" },
+  { label: "Focus", value: "Full-stack: web, mobile & backend" },
+  { label: "Stack", value: "React · Next.js · React Native · Node · Nest.js · Postgres" },
 ];
 
 const About = () => {
@@ -71,8 +71,8 @@ const About = () => {
             <p className="text-2xl font-extrabold leading-tight md:text-4xl">
               Software engineer with{" "}
               <span className="text-accent">7+ years</span> of experience,
-              now focused on mobile: React Native apps for iOS and Android,
-              down to the native code.
+              building across the stack: web, mobile and the backends
+              behind them.
             </p>
           </Reveal>
 
@@ -80,10 +80,11 @@ const About = () => {
             <Reveal delay={200}>
               <p>
                 I'm passionate about blending creativity with technical
-                expertise. I've shipped WakaBuddy to the App Store and Google
-                Play end to end, writing the Swift and Kotlin modules, widgets
-                and background work it needs, and I bring the same care to
-                the web: cross-platform, responsive and pixel-perfect.
+                expertise. I build polished web apps with React and Next.js,
+                and I've shipped WakaBuddy to the App Store and Google Play
+                end to end, from its Swift and Kotlin modules to its API.
+                Whatever the platform: responsive, accessible and
+                pixel-perfect.
               </p>
             </Reveal>
             <Reveal delay={280}>

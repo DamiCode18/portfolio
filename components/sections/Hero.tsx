@@ -24,44 +24,44 @@ const floatingTags: {
   color: "yellow" | "blue" | "green" | "pink";
   tilt: number;
 }[] = [
-  { label: "React Native", color: "blue", tilt: -6 },
-  { label: "Swift", color: "yellow", tilt: 4 },
-  { label: "Kotlin", color: "green", tilt: -3 },
-  { label: "Expo", color: "pink", tilt: 5 },
+  { label: "React", color: "blue", tilt: -6 },
+  { label: "React Native", color: "yellow", tilt: 4 },
+  { label: "Node.js", color: "green", tilt: -3 },
+  { label: "Full-stack", color: "pink", tilt: 5 },
   { label: "TypeScript", color: "blue", tilt: -4 },
   { label: "Accessibility", color: "yellow", tilt: 3 },
 ];
 
 const capabilities = [
   {
-    title: "iOS & Android Apps",
+    title: "Full-stack Delivery",
     detail:
-      "React Native and Expo apps shipped to the App Store and Google Play, from first screen to store release.",
+      "Products taken from idea to production, end to end — web, mobile, API and database.",
   },
   {
-    title: "Native Modules",
+    title: "Frontend Engineering",
     detail:
-      "Swift and Kotlin where JavaScript stops: HealthKit, Android services, widgets and Live Activities.",
+      "React, Next.js, Vue and TypeScript interfaces built to scale and stay fast.",
   },
   {
-    title: "Offline & Background",
+    title: "Mobile Apps",
     detail:
-      "Background sync, location recording and offline queues that survive bad signal and app restarts.",
-  },
-  {
-    title: "Release Engineering",
-    detail:
-      "EAS builds, store submissions, over-the-air updates and crash reporting, wired into CI.",
+      "React Native apps on the App Store and Google Play, with native Swift and Kotlin where JavaScript stops.",
   },
   {
     title: "Backend & APIs",
     detail:
-      "Node and Nest.js services with Prisma and Postgres, built to serve the apps they power.",
+      "Node and Nest.js services with Prisma and Postgres, plus headless CMS integrations.",
   },
   {
-    title: "Web & Product",
+    title: "Release & Performance",
     detail:
-      "React and Next.js frontends, and close work with designers and founders to ship the right thing.",
+      "CI, store releases and over-the-air updates; lean bundles and smooth runtime, measured, not guessed.",
+  },
+  {
+    title: "Product Collaboration",
+    detail:
+      "Working closely with designers, founders and stakeholders to ship the right thing.",
   },
 ];
 
@@ -176,9 +176,9 @@ const Hero = () => {
 
           <h1 className="font-display bolder-text uppercase font-extrabold leading-[0.95] tracking-tight text-[clamp(2.75rem,12.5vw,8.5rem)]">
             <span className="hero-line hero-anim block whitespace-nowrap">
-              <span className="hero-word">M</span>
+              <span className="hero-word">S</span>
               <ThemeToggle />
-              <span className="hero-word">bile</span>
+              <span className="hero-word">ftware</span>
             </span>
             <span className="hero-line hero-anim block whitespace-nowrap">
               <span className="hero-word">Engineer</span>
@@ -187,12 +187,14 @@ const Hero = () => {
 
           <p className="hero-sub hero-anim mx-auto mt-8 max-w-xl text-sm font-bold text-muted md:text-lg">
             <span className="hero-sub-part">
-              Building fast, accessible mobile apps end to end — from
+              Building fast, accessible products end to end —
             </span>{" "}
+            <span className="hero-sub-part text-fg">React &amp; Next.js</span>{" "}
+            <span className="hero-sub-part">on the web,</span>{" "}
             <span className="hero-sub-part text-fg">React Native</span>{" "}
-            <span className="hero-sub-part">on iOS and Android and native</span>{" "}
-            <span className="hero-sub-part text-fg">Swift &amp; Kotlin</span>{" "}
-            <span className="hero-sub-part">to the backends behind them.</span>
+            <span className="hero-sub-part">on iOS and Android, and the</span>{" "}
+            <span className="hero-sub-part text-fg">Node &amp; Postgres</span>{" "}
+            <span className="hero-sub-part">backends behind them.</span>
           </p>
 
           <div className="hero-cta hero-anim mt-10 mb-8 flex justify-center">
