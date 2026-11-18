@@ -60,6 +60,14 @@ const Work = () => {
                 <p className="clamp-2 mt-3 text-sm leading-relaxed text-muted md:text-base">
                   {project.description}
                 </p>
+                {"highlight" in project && project.highlight && (
+                  <p className="mt-3 flex gap-2 text-sm font-semibold leading-relaxed">
+                    <span aria-hidden="true" className="text-accent">
+                      +
+                    </span>
+                    <span>{project.highlight}</span>
+                  </p>
+                )}
                 <p className="mt-auto pt-6 text-xs font-semibold uppercase tracking-wider text-subtle">
                   {project.skills?.join(" · ")}
                 </p>

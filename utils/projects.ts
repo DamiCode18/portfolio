@@ -6,7 +6,10 @@ export const projectData = [
     title: "WakaBuddy",
     imgUrl: `/Wakabuddy.webp`,
     description:
-      "A social walking app on iPhone and Android. It reads the steps a phone or watch already counts (Apple Health, Health Connect, Samsung Health) and turns them into leaderboards, challenges and weekly leagues with friends.",
+      "A social walking app for iPhone and Android that turns everyday steps into leaderboards and challenges with friends.",
+    // Shown in full under the (two-line) description on featured cards.
+    highlight:
+      "Native Swift and Kotlin modules: HealthKit, a background step service, home-screen widgets and a Live Activity.",
     skills: ["React Native", "Expo", "TypeScript", "NestJS", "Prisma", "Postgres", "Next.js", "RevenueCat"],
   },
   {
