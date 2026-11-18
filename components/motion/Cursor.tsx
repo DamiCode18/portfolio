@@ -26,12 +26,17 @@ const Cursor = () => {
     const ringX = gsap.quickTo(ring.current, "x", { duration: 0.35, ease: "power3" });
     const ringY = gsap.quickTo(ring.current, "y", { duration: 0.35, ease: "power3" });
 
+    // Fade in once per entry, not on every mousemove: a new tween per event
+    // (60+ a second) all fighting over opacity is wasted work while scrolling.
+    let visible = false;
     const move = (event: MouseEvent) => {
       dotX(event.clientX);
       dotY(event.clientY);
       ringX(event.clientX);
       ringY(event.clientY);
-      gsap.to([dot.current, ring.current], { opacity: 1, duration: 0.2 });
+      if (visible) return;
+      visible = true;
+      gsap.to([dot.current, ring.current], { opacity: 1, duration: 0.2, overwrite: "auto" });
     };
     const over = (event: MouseEvent) => {
       const interactive = (event.target as Element).closest(
@@ -41,7 +46,10 @@ const Cursor = () => {
       gsap.to(ring.current, { scale: interactive ? 1.15 : 1, duration: 0.3, ease: "power3.out" });
       gsap.to(dot.current, { scale: interactive ? 0.75 : 1, duration: 0.3, ease: "power3.out" });
     };
-    const leave = () => gsap.to([dot.current, ring.current], { opacity: 0, duration: 0.2 });
+    const leave = () => {
+      visible = false;
+      gsap.to([dot.current, ring.current], { opacity: 0, duration: 0.2, overwrite: "auto" });
+    };
 
     window.addEventListener("mousemove", move, { passive: true });
     document.addEventListener("mouseover", over, { passive: true });

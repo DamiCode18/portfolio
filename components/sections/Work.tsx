@@ -88,7 +88,9 @@ const Work = () => {
                     target="_blank"
                     rel="noreferrer"
                     onMouseEnter={() => preview.current?.show(project.imgUrl, project.title)}
-                    onMouseMove={(event) => preview.current?.move(event.clientX, event.clientY)}
+                    onMouseMove={(event) =>
+                      preview.current?.move(event.clientX, event.clientY, project.imgUrl, project.title)
+                    }
                     onMouseLeave={() => preview.current?.hide()}
                     className="group grid grid-cols-[1fr_auto] items-center gap-6 py-6 transition duration-300 hover:pl-3 md:grid-cols-[minmax(0,14rem)_1fr_auto]"
                   >
