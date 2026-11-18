@@ -24,44 +24,44 @@ const floatingTags: {
   color: "yellow" | "blue" | "green" | "pink";
   tilt: number;
 }[] = [
-  { label: "React", color: "blue", tilt: -6 },
-  { label: "TypeScript", color: "yellow", tilt: 4 },
-  { label: "Node.js", color: "green", tilt: -3 },
-  { label: "Full-stack", color: "pink", tilt: 5 },
-  { label: "Performance", color: "blue", tilt: -4 },
+  { label: "React Native", color: "blue", tilt: -6 },
+  { label: "Swift", color: "yellow", tilt: 4 },
+  { label: "Kotlin", color: "green", tilt: -3 },
+  { label: "Expo", color: "pink", tilt: 5 },
+  { label: "TypeScript", color: "blue", tilt: -4 },
   { label: "Accessibility", color: "yellow", tilt: 3 },
 ];
 
 const capabilities = [
   {
-    title: "Full-stack Delivery",
+    title: "iOS & Android Apps",
     detail:
-      "Products taken from idea to production, end to end — frontend, API and database.",
+      "React Native and Expo apps shipped to the App Store and Google Play, from first screen to store release.",
   },
   {
-    title: "Frontend Engineering",
+    title: "Native Modules",
     detail:
-      "React, Next.js, Vue and TypeScript interfaces built to scale and stay fast.",
+      "Swift and Kotlin where JavaScript stops: HealthKit, Android services, widgets and Live Activities.",
+  },
+  {
+    title: "Offline & Background",
+    detail:
+      "Background sync, location recording and offline queues that survive bad signal and app restarts.",
+  },
+  {
+    title: "Release Engineering",
+    detail:
+      "EAS builds, store submissions, over-the-air updates and crash reporting, wired into CI.",
   },
   {
     title: "Backend & APIs",
     detail:
-      "Node and Nest.js services with Prisma and Postgres, plus headless CMS integrations.",
+      "Node and Nest.js services with Prisma and Postgres, built to serve the apps they power.",
   },
   {
-    title: "UI Engineering",
+    title: "Web & Product",
     detail:
-      "Pixel-perfect, responsive, accessible components with Tailwind and Chakra.",
-  },
-  {
-    title: "Performance",
-    detail:
-      "Lean bundles, fast loads and smooth runtime — measured, not guessed.",
-  },
-  {
-    title: "Product Collaboration",
-    detail:
-      "Working closely with designers, founders and stakeholders to ship the right thing.",
+      "React and Next.js frontends, and close work with designers and founders to ship the right thing.",
   },
 ];
 
@@ -176,9 +176,9 @@ const Hero = () => {
 
           <h1 className="font-display bolder-text uppercase font-extrabold leading-[0.95] tracking-tight text-[clamp(2.75rem,12.5vw,8.5rem)]">
             <span className="hero-line hero-anim block whitespace-nowrap">
-              <span className="hero-word">S</span>
+              <span className="hero-word">M</span>
               <ThemeToggle />
-              <span className="hero-word">ftware</span>
+              <span className="hero-word">bile</span>
             </span>
             <span className="hero-line hero-anim block whitespace-nowrap">
               <span className="hero-word">Engineer</span>
@@ -187,12 +187,12 @@ const Hero = () => {
 
           <p className="hero-sub hero-anim mx-auto mt-8 max-w-xl text-sm font-bold text-muted md:text-lg">
             <span className="hero-sub-part">
-              Building fast, accessible products end to end — from
+              Building fast, accessible mobile apps end to end — from
             </span>{" "}
-            <span className="hero-sub-part text-fg">React &amp; Next.js</span>{" "}
-            <span className="hero-sub-part">frontends to</span>{" "}
-            <span className="hero-sub-part text-fg">Node &amp; Postgres</span>{" "}
-            <span className="hero-sub-part">backends.</span>
+            <span className="hero-sub-part text-fg">React Native</span>{" "}
+            <span className="hero-sub-part">on iOS and Android and native</span>{" "}
+            <span className="hero-sub-part text-fg">Swift &amp; Kotlin</span>{" "}
+            <span className="hero-sub-part">to the backends behind them.</span>
           </p>
 
           <div className="hero-cta hero-anim mt-10 mb-8 flex justify-center">

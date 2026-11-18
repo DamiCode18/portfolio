@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 import Seo from "../components/Seo";
 import Hero from "../components/sections/Hero";
+import Mobile from "../components/sections/Mobile";
 import Work from "../components/sections/Work";
 import About from "../components/sections/About";
 import Contact from "../components/sections/Contact";
@@ -8,9 +9,10 @@ import Contact from "../components/sections/Contact";
 const Home: NextPage = () => {
   return (
     <>
-      <Seo description="Damilare Adebayo — software engineer with 7+ years of experience building fast, accessible web applications with React and Next.js." />
+      <Seo description="Damilare Adebayo — mobile engineer building React Native apps for iOS and Android, down to native Swift and Kotlin. 7+ years shipping products end to end." />
       <main>
         <Hero />
+        <Mobile />
         <Work />
         <About />
         <Contact />
