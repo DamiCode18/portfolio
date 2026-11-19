@@ -29,12 +29,9 @@ const Work = () => {
       <div className="mx-auto mt-20 grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2">
         {featured.map((project, i) => (
           <Reveal key={project.id} delay={(i % 2) * 120} className="h-full">
-            <a
-              href={project.url}
-              target="_blank"
-              rel="noreferrer"
-              className="group flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface transition duration-300 hover:-translate-y-1 hover:border-accent hover:shadow-xl"
-            >
+            {/* The title link stretches over the whole card, so store links can
+                sit inside as their own links (links can't nest). */}
+            <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-line bg-surface transition duration-300 focus-within:border-accent hover:-translate-y-1 hover:border-accent hover:shadow-xl">
               {/* Shaped like the screenshots (all ~1400×726) so each shows whole.
                   The old fixed-height box with an oversized parallax layer
                   zoomed them and cut off their edges. */}
@@ -48,7 +45,16 @@ const Work = () => {
               </div>
               <div className="flex flex-1 flex-col p-8">
                 <div className="flex items-start justify-between gap-4">
-                  <h3 className="text-2xl font-extrabold">{project.title}</h3>
+                  <h3 className="text-2xl font-extrabold">
+                    <a
+                      href={project.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="after:absolute after:inset-0 after:content-[''] focus-visible:outline-none"
+                    >
+                      {project.title}
+                    </a>
+                  </h3>
                   <span
                     aria-hidden="true"
                     className="mt-1 text-xl text-subtle transition duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-accent"
@@ -67,11 +73,26 @@ const Work = () => {
                     <span>{project.highlight}</span>
                   </p>
                 )}
+                {"stores" in project && project.stores && (
+                  <div className="relative z-10 mt-5 flex flex-wrap gap-2">
+                    {project.stores.map((store) => (
+                      <a
+                        key={store.label}
+                        href={store.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-full border border-line-strong px-4 py-2 text-xs font-bold uppercase tracking-widest transition duration-300 hover:border-accent hover:text-accent"
+                      >
+                        {store.label} <span aria-hidden="true">↗</span>
+                      </a>
+                    ))}
+                  </div>
+                )}
                 <p className="mt-auto pt-6 text-xs font-semibold uppercase tracking-wider text-subtle">
                   {project.skills?.join(" · ")}
                 </p>
               </div>
-            </a>
+            </div>
           </Reveal>
         ))}
       </div>

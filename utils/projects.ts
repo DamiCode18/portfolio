@@ -10,6 +10,10 @@ export const projectData = [
     // Shown in full under the (two-line) description on featured cards.
     highlight:
       "Native Swift and Kotlin modules: HealthKit, a background step service, home-screen widgets and a Live Activity.",
+    stores: [
+      { label: "App Store", href: "https://apps.apple.com/app/id6824891844" },
+      { label: "Google Play", href: "https://play.google.com/store/apps/details?id=app.wakabuddy.mobile" },
+    ],
     skills: ["React Native", "Expo", "TypeScript", "NestJS", "Prisma", "Postgres", "Next.js", "RevenueCat"],
   },
   {
